@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_background"
+    android:id="@+id/linear_layout">
+    <View
+        android:layout_width="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:layout_height="@dimen/_5sdp"
+        android:background="@drawable/background_grey"
+        android:layout_marginTop="@dimen/_10sdp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="location"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="#8B8A8A"
+        android:layout_marginBottom="@dimen/_10sdp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4">
+        <!--  android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/ahamdabad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/ahmedabad"
+                android:contentDescription="ahemdabad"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Ahemdabad" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:id="@+id/banglore"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/banglore"
+                android:contentDescription="banglore"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Banglore" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/chandigarh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/chandigarh"
+                android:contentDescription="chandigarh"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Chandigarh" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/chennai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/chennai"
+                android:contentDescription="chennai"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Chennai" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/delhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/delhi"
+                android:contentDescription="delhi"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Delhi" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/hyderabad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/hyderabad"
+                android:contentDescription="hyderabad"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Hyderabad" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/kolkata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/kolkata"
+                android:contentDescription="kolkata"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Kolkata" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/mumbai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/mumbai"
+                android:contentDescription="mumbai"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Mumbai" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/background_white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/pune"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/pune"
+                android:contentDescription="pune"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pune" />
+        </LinearLayout>
+
+
+    </GridLayout>
+</LinearLayout>

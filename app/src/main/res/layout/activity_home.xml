@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/darkgrey"
+        android:elevation="@dimen/_10sdp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/logo" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_10sdp">
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:textAlignment="center"
+            android:drawableStart="@drawable/sharp_location_on_24"
+            android:text="Select City" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav" />
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottom_nav"
+        android:elevation="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp" 
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:mbn_backgroundBottomColor="@color/darkgrey"
+        app:mbn_circleColor="@color/darkgrey"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#03A9F4"
+        app:mbn_defaultIconColor="#90a4ae"
+        app:mbn_rippleColor="#FFEB3B"
+        app:mbn_selectedIconColor="@color/white"
+        app:mbn_shadowColor="@color/secondary"
+        tools:layout_editor_absoluteX="0dp" />
+<!--        app:mbn_rippleColor="#2f424242"-->
+
+
+
+
+
+    <!--   <include -->
+<!--       layout="@layout/custom_toolbar"-->
+<!--      android:id="@+id/toolbar">-->
+<!--       -->
+<!--   </include>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

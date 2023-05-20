@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <item-->
+<!--        android:title="Search"-->
+<!--        android:id="@+id/search"-->
+<!--        android:icon="@drawable/round_search_24"-->
+<!--        app:actionViewClass="androidx.appcompat.widget.SearchView"-->
+<!--        app:showAsAction="ifRoom|collapseActionView" />-->
+    <item
+        android:title="location"
+        android:id="@+id/location"
+        android:icon="@drawable/sharp_location_on_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:title="city"
+        android:id="@+id/cityname"
+        app:showAsAction="always|collapseActionView"/>
+
+
+
+
+</menu>
