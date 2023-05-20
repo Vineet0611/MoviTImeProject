@@ -1,0 +1,3586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity"
+    android:padding="5dp">
+    <LinearLayout
+        android:id="@+id/LinLayMovieName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/movie"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colonString"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Akhanda"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginStart="3dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinLayTheaterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinLayMovieName"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Theater"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colonString"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rhythm Cinemas"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginStart="3dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinLayTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinLayTheaterName"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colonString"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8:00"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginStart="3dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinLayTicketNoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinLayTime"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Tickets"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colonString"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginStart="3dp"
+            />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/HzViewSeat"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="1000dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/platinum_rs_300"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/k"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null"
+                            />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/K12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/j"
+                        android:textColor="#FCFFFFFF"
+
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/J12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/golden"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gold_rs_200"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/i"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/I12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/h"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/H12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/g"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/G12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/f"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/F12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/e"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/E12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/golden"
+                    android:backgroundTint="@color/golden"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/silver_rs_150"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/d"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/D12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/c"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/C12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/b"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/B12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@string/a"
+                        android:textColor="#FEFFFEFE"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_1"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_2"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_3"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_4"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_5"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A6"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_6"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A7"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_7"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A8"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_8"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A9"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_9"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A10"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_10"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_11"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/A12"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="2dp"
+                            android:background="@drawable/seat_checkbox_layout_file"
+                            android:button="@null" />
+
+                        <TextView
+                            android:layout_width="14dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/_12"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </FrameLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/screenimage" />
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </HorizontalScrollView>
+    <LinearLayout
+        android:id="@+id/seatInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HzViewSeat">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/available_seat_style"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/available"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/selected_seat_style"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/selected"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+
+                android:layout_marginStart="10dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/seat_disable_style"
+                android:foregroundGravity="center_horizontal"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sold"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinLaySeatNums"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/seatInfo">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/seat_nos"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colonString"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/SeatNumbersSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinLaySeatTotalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/LinLaySeatNums">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/colonString"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/SeatSelectedTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/button"
+        app:iconTint="#673AB7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinLaySeatTotalAmount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
