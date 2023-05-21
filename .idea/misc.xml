@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/_bg__payment_ek2_shape.xml" value="0.1125" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/available_seat_style.xml" value="0.106" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/design_template_for_item_view.xml" value="0.1" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1015" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/ictrace.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/image_border_resource.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/print_ticket_item_background_layout.xml" value="0.106" />
@@ -12,10 +15,20 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/seat_disable_style.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/selected_seat_style.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/arrow_back.xml" value="0.106" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1015" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/font/inter.xml" value="0.18958333333333333" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_email_otp.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_email_phone.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_facebook_auth.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_forgot_password.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_home.xml" value="0.12" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_login.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_main.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_payment.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_print_ticket.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_signup.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_user_dashboard.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_verification.xml" value="0.1175925925925926" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/custom_toolbar.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_account.xml" value="0.2" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.14" />
@@ -29,7 +42,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

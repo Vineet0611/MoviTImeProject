@@ -2,4 +2,46 @@
 <resources>
     <!-- login_form_ styles -->
 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="error_toast">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stFont">@font/poppins</item>
+        <item name="stTextSize">14sp</item>
+        <item name="stColorBackground">@color/signup_color</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stIconStart">@drawable/error_img</item>
+        <item name="stLength">LONG</item>
+        <item name="stRadius">10dp</item>
+    </style>
+
+    <style name="warning_toast">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stFont">@font/poppins</item>
+        <item name="stColorBackground">@color/signup_color</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stIconStart">@drawable/warning_img</item>
+        <item name="stLength">LONG</item>
+        <!--	<item name="stGravity">top</item> top or center-->
+        <item name="stRadius">10dp</item>
+    </style>
+
+    <style name="success_toast">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stFont">@font/poppins</item>
+        <item name="stColorBackground">@color/signup_color</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stIconStart">@drawable/check_img</item>
+        <item name="stLength">SHORT</item>
+        <!--	<item name="stGravity">top</item> top or center-->
+        <item name="stRadius">10dp</item>
+    </style>
 </resources>
