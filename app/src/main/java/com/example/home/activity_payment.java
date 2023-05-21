@@ -49,17 +49,17 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        movieImage = findViewById(R.id.movie_image);
-        movie_name = findViewById(R.id.movie_name);
-        movie_genre = findViewById(R.id.movie_genre);
-        movie_location = findViewById(R.id.movie_location);
-        movie_dateTime = findViewById(R.id.movie_dateTime);
+        movieImage = findViewById(R.id.movieimage);
+        movie_name = findViewById(R.id.moviename);
+        movie_genre = findViewById(R.id.moviegenre);
+        movie_location = findViewById(R.id.movielocation);
+        movie_dateTime = findViewById(R.id.moviedateTime);
         total_seats = findViewById(R.id.seats);
-        payment_txt = findViewById(R.id.payment_amt);
-        service_fees = findViewById(R.id.service_fees);
+        payment_txt = findViewById(R.id.paymentamt);
+        service_fees = findViewById(R.id.servicefees);
         book_now = findViewById(R.id.btn_book_now);
         Timer = findViewById(R.id.timer);
-        back_btn = findViewById(R.id.back_btn);
+        back_btn = findViewById(R.id.backbtn);
 
         //These Code is for getting selected seats from seat Page
         seatList = (ArrayList<String>) getIntent().getSerializableExtra("seatNo");
