@@ -17,15 +17,51 @@
         tools:targetApi="31">
         <activity
             android:name=".HomeActivity"
-            android:exported="true">
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".activity_payment"
+            android:exported="false" />
+        <activity
+            android:name=".activity_email_phone"
+            android:exported="false" />
+        <activity
+            android:name=".FacebookAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_email_otp"
+            android:exported="false" />
+        <activity
+            android:name=".activity_home"
+            android:exported="false" />
+        <activity
+            android:name=".activity_verification"
+            android:exported="false" />
+        <activity
+            android:name=".activity_forgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".activity_signup"
+            android:exported="false" />
+        <activity
+            android:name=".activity_login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SelecteSeat"/>
         <activity android:name=".PrintTicket"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
     </application>
 
 </manifest>

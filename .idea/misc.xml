@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/_bg__payment_ek2_shape.xml" value="0.1125" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/available_seat_style.xml" value="0.106" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/button_background_transparent.xml" value="0.1015" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/check_img.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/design_template_for_item_view.xml" value="0.1" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/error_img.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/ictrace.xml" value="0.1" />
@@ -14,6 +17,7 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/seat_checkbox_layout_file.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/seat_disable_style.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/selected_seat_style.xml" value="0.1" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/warning_img.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/arrow_back.xml" value="0.106" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/font/inter.xml" value="0.18958333333333333" />
@@ -21,10 +25,10 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_email_phone.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_facebook_auth.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_forgot_password.xml" value="0.15104166666666666" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_home.xml" value="0.12" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_login.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_main.xml" value="0.15104166666666666" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_payment.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_payment.xml" value="0.22" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_print_ticket.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_signup.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_user_dashboard.xml" value="0.15104166666666666" />
