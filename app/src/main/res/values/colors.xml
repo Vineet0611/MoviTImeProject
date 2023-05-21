@@ -14,6 +14,18 @@
     <color name="golden">#ffc000</color>
     <color name="SiteRed">#D90429</color>
     <color name="SiteRed2">#FF4D4D</color>
-
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="bg_dark">#121212</color>
+    <color name="rectangle_4_color">#14ffffff</color>
+    <color name="bg_light">#FFFFFF</color>
+    <color name="signup_color">#D72323</color>
+    <color name="rectangle_3_color">#D72323</color>
+    <color name="_2_ticket_color">#A5A0A0</color>
+    <color name="line_1_color">#373737</color>
+    <color name="clr_grey_text_transparent">#80D3D3D3</color>
+    <color name="rectangle_3_ek1_color">#161616</color>
+    <color name="payment_dim_red">#672323</color>
 
 </resources>

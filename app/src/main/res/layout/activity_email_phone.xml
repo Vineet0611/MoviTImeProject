@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/screen"
+    tools:context=".activity_email_phone">
+
+    <RelativeLayout
+        android:id="@+id/login_form_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/frame_103"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/banner_login_welcome_back_"
+                style="@style/textDefaultFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center"
+                android:gravity="center"
+                android:text="@string/welcome_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/frame_104"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="75dp">
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="177dp"
+                android:background="@drawable/rectangle_facebook_google"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/rectangle_3_color" />
+
+            <EditText
+                android:id="@+id/txt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="76dp"
+                style="@style/editText_bg"
+                android:ems="10"
+                android:hint="@string/enter_your_phone_number_string"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="12dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:textSize="16sp"
+                android:paddingLeft="12dp"
+                android:paddingRight="30dp" />
+
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/editText_bg"
+                android:ellipsize="end"
+                android:hint="@string/enter_your_email_string"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:paddingLeft="12dp"
+                android:paddingRight="30dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
