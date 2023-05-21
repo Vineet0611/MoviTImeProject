@@ -15,4 +15,41 @@
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bottom_sheet_background</item>
     </style>
+    <!--    Light Mode -->
+    <style name="screen">
+        <item name="android:background">@color/bg_light</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    Text Color -->
+    <style name="textDefaultFont">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <!--    Edit Text Background -->
+    <style name="editText_bg">
+        <item name="android:background">@drawable/rectangle_transparent_input</item>
+    </style>
+
+    <!--    Button Background -->
+    <style name="button_bg">
+        <item name="android:background">@drawable/button_background_transparent</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <!--    Line Design -->
+    <style name="line_design">
+        <item name="android:background">@drawable/line_design_dark</item>
+    </style>
+
+    <!--    Line Design -->
+    <style name="otp_box">
+        <item name="android:background">@drawable/rectangle_transparent_input</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

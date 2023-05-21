@@ -1,56 +1,48 @@
 package com.example.home;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.home.databinding.ActivityMainBinding;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-
-
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
- private ActivityMainBinding binding;
+
+    Timer timer;
+    String getUsername, getEmail, getPhone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-      binding=ActivityMainBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        setContentView(binding.getRoot());
-        binding.button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it =new Intent(getApplicationContext(),SelecteSeat.class);
-                startActivity(it);
-            }
-        });
+        setContentView(R.layout.activity_main);
+        if (checkData()) {
+            Intent intent = new Intent(MainActivity.this, com.example.home.activity_home.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(MainActivity.this, activity_login.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }, 5000);
+        }
+    }
+    private boolean checkData() {
+
+        SharedPreferences getSharedData = getSharedPreferences("MovieTime", MODE_PRIVATE);
+
+        getUsername = getSharedData.getString("Username", "Data Not Found");
+        getEmail = getSharedData.getString("Email", "Data Not Found");
+        getPhone = getSharedData.getString("Phone", "Data Not Found");
+
+        return !getUsername.equals("Data Not Found") || !getEmail.equals("Data Not Found") || !getPhone.equals("Data Not Found");
     }
 }
