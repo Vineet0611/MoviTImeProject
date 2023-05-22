@@ -57,7 +57,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         total_seats = findViewById(R.id.seats);
         payment_txt = findViewById(R.id.paymentamt);
         service_fees = findViewById(R.id.servicefees);
-        book_now = findViewById(R.id.btn_book_now);
+        book_now = findViewById(R.id.btnbooknow);
         Timer = findViewById(R.id.timer);
         back_btn = findViewById(R.id.backbtn);
 
@@ -231,7 +231,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
                                 Log.d(TAG, "Payment Response: " + "Success!");
                                 StyleableToast.makeText(getApplicationContext(), "Payment SuccessFull", Toast.LENGTH_LONG, R.style.error_toast).show();
 
-                                Intent intent = new Intent(activity_payment.this, com.example.home.activity_home.class); //<-- Replace activity_home Home with Print Ticket Activity
+                                Intent intent = new Intent(activity_payment.this, PrintTicket.class); //<-- Replace activity_home Home with Print Ticket Activity
                                 startActivity(intent);
                                 finish();
                             }

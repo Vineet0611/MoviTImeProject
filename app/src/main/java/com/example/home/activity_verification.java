@@ -148,7 +148,7 @@ public class activity_verification extends AppCompatActivity {
             } else if (google_status.equals("true")) {
                 insertData("Google", getUsername, getEmail, getPhone, getId);
             } else {
-                Intent intent = new Intent(getApplicationContext(), com.example.home.activity_login.class);
+                Intent intent = new Intent(getApplicationContext(), activity_login.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 StyleableToast.makeText(getApplicationContext(), "Register Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
                 startActivity(intent);
@@ -171,7 +171,7 @@ public class activity_verification extends AppCompatActivity {
                             if (status.equals("success")) {
 
                                 StyleableToast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
-                                Intent intent = new Intent(getApplicationContext(), com.example.home.activity_home.class);
+                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
                                 finish();

@@ -130,7 +130,7 @@ public class activity_login extends AppCompatActivity {
         fb_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), com.example.home.FacebookAuthActivity.class);
+                Intent intent = new Intent(getApplicationContext(), FacebookAuthActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
                 finish();
@@ -184,7 +184,7 @@ public class activity_login extends AppCompatActivity {
 
                                 saveData(false);
 
-                                Intent intent = new Intent(getApplicationContext(),HomeActivity.class); //<-- Replace activity_home with Homepage activity
+                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class); //<-- Replace activity_home with Homepage activity
                                 intent.putExtra("username", save_username);
                                 intent.putExtra("email", save_email);
                                 intent.putExtra("phone", save_phone);
@@ -315,7 +315,7 @@ public class activity_login extends AppCompatActivity {
                                 editor.putString("Phone", phone);
                                 editor.apply();
 
-                                Intent intent = new Intent(getApplicationContext(), com.example.home.activity_home.class);
+                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 StyleableToast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
                                 startActivity(intent);
                             }
@@ -337,7 +337,7 @@ public class activity_login extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                StyleableToast.makeText(getApplicationContext(), "Sorry something went wrong please try again!", Toast.LENGTH_LONG, R.style.error_toast).show();
             }
         }) {
             protected Map<String, String> getParams() {

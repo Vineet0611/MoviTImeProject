@@ -13,13 +13,14 @@ public class MainActivity extends AppCompatActivity {
 
     Timer timer;
     String getUsername, getEmail, getPhone;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (checkData()) {
-            Intent intent = new Intent(MainActivity.this, com.example.home.activity_home.class);
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
         }

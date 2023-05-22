@@ -30,9 +30,9 @@ public class activity_home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        username = findViewById(R.id.txt_username);
-        email = findViewById(R.id.txt_email);
-        phone = findViewById(R.id.txt_phone);
+//        username = findViewById(R.id.txt_username);
+//        email = findViewById(R.id.txt_email);
+//        phone = findViewById(R.id.txt_phone);
        // paymentid = findViewById(R.id.txt_pid);
 
       //  logout_btn = findViewById(R.id.logout_btn);
@@ -40,27 +40,27 @@ public class activity_home extends AppCompatActivity {
 
         getData();
 
-        logout_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logout();
-            }
-        });
+//        logout_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                logout();
+//            }
+//        });
 
 
-        payment_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ArrayList<String> list = new ArrayList<>();
-                list.add("H3");
-                list.add("H4");
-
-                Intent intent = new Intent(getApplicationContext(), activity_payment.class);
-                intent.putExtra("seatNo", list);
-                startActivity(intent);
-            }
-        });
+//        payment_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                ArrayList<String> list = new ArrayList<>();
+//                list.add("H3");
+//                list.add("H4");
+//
+//                Intent intent = new Intent(getApplicationContext(), activity_payment.class);
+//                intent.putExtra("seatNo", list);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
@@ -76,10 +76,10 @@ public class activity_home extends AppCompatActivity {
         getGoogleStatus = getSharedData.getString("Google_login", "false");
         getFacebookStatus = getSharedData.getString("Facebook_login", "false");
 
-        username.setText(getUsername);
-        email.setText(getEmail);
-        phone.setText(getPhone);
-        paymentid.setText(getUserId);
+//        username.setText(getUsername);
+//        email.setText(getEmail);
+//        phone.setText(getPhone);
+//        paymentid.setText(getUserId);
     }
     //--------------------------
 
