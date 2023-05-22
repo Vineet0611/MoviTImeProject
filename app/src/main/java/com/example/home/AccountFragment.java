@@ -1,6 +1,8 @@
 package com.example.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -17,15 +20,21 @@ import android.widget.Toast;
  * create an instance of this fragment.
  */
 public class AccountFragment extends Fragment {
-Button btn;
+
+    Button btn;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    String getUserId;
+    String getUsername;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextView username;
+    private TextView userEmail;
+
 
     public AccountFragment() {
         // Required empty public constructor
@@ -63,6 +72,12 @@ Button btn;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
      View rootView= inflater.inflate(R.layout.fragment_account, container, false);
+        getData();
+
+     username=(TextView) rootView.findViewById(R.id.DashboardUsername);
+     userEmail=(TextView) rootView.findViewById(R.id.UserEmail);
+     username.setText(getUserId);
+     userEmail.setText(getUsername);
      // code to navigate to select Seat page  ---by vineet
 //    btn =(Button)rootView.findViewById(R.id.showSeats) ;
 //    btn.setOnClickListener(new View.OnClickListener() {
@@ -74,5 +89,13 @@ Button btn;
 //        }
 //    });
     return rootView;
+    }
+    private void getData() {
+
+        SharedPreferences getSharedData = requireActivity().getSharedPreferences("MovieTime", Context.MODE_PRIVATE);
+
+        getUserId= getSharedData.getString("Username", "Data Not Found");
+        getUsername = getSharedData.getString("Email", "Data Not Found");
+
     }
 }

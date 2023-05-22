@@ -32,17 +32,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:background="@drawable/user_details_background"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 app:srcCompat="@drawable/man" />
 
             <TextView
+                android:id="@+id/DashboardUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                android:layout_marginTop="10dp"
@@ -52,9 +53,10 @@
             />
 
             <TextView
+                android:id="@+id/UserEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="vineetmendon@gmail.com"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
