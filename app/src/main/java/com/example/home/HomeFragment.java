@@ -1,5 +1,8 @@
 package com.example.home;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -103,11 +106,15 @@ public class HomeFragment extends Fragment {
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster2, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster3, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster4, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
+    if(isNetworkConnected()){
 
                 loadFirstRec();
                 loadSecondRec();
                 loadThirdRec();
                 loadFourthRec();
+    }else{
+        Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_LONG).show();
+    }
 
 
     }
@@ -292,6 +299,11 @@ public class HomeFragment extends Fragment {
 
         Volley.newRequestQueue(getActivity()).add(stringRequest);
         Log.d("volley ", " Second queued success: ");
+    }
+  @SuppressLint("MissingPermission")
+  private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 }
 

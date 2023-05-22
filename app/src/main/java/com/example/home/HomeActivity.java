@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,6 +30,7 @@ import kotlin.jvm.functions.Function1;
 public class HomeActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView city;
+    private long lastClick = 0;
     private Fragment[] fragments;
     private int currentFragmentIndex;
     public MeowBottomNavigation btn_nav;
@@ -46,7 +48,10 @@ public class HomeActivity extends AppCompatActivity {
         city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (SystemClock.elapsedRealtime() - lastClick < 2000){  //Single Click
+                    return;
+                }
+                lastClick = SystemClock.elapsedRealtime();
                 BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
                 bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
 

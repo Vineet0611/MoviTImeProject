@@ -1,6 +1,7 @@
 package com.example.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -53,6 +54,16 @@ public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdap
         Log.d("volleyholder ", "movie name ssuccess: ");
         holder.moviegenre.setText(arrFirst.get(position).mGenre);
         Log.d("volleyholder ", "genre ssuccess: ");
+ 
+ 
+ 			holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MovieDetailsActivity.class);
+                intent.putExtra("movie_name", arrFirst.get(holder.getLayoutPosition()).mName);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

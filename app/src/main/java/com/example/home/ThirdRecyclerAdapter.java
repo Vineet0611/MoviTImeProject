@@ -1,6 +1,7 @@
 package com.example.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -53,6 +54,14 @@ public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdap
         Log.d("volleyholder ", "Second movie name ssuccess: ");
         holder.moviegenre.setText(arrThird.get(position).mGenre);
         Log.d("volleyholder ", "Second genre ssuccess: ");
+   holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MovieDetailsActivity.class);
+                intent.putExtra("movie_name", arrThird.get(holder.getLayoutPosition()).mName);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
