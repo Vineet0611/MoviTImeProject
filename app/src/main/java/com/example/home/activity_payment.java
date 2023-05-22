@@ -95,7 +95,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), com.example.home.activity_home.class); //<-- Replace the Activity Name with Seat Booking activity name
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class); //<-- Replace the Activity Name with Seat Booking activity name
                 startActivity(intent);
             }
         });

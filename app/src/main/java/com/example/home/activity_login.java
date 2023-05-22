@@ -184,7 +184,7 @@ public class activity_login extends AppCompatActivity {
 
                                 saveData(false);
 
-                                Intent intent = new Intent(getApplicationContext(), com.example.home.activity_home.class); //<-- Replace activity_home with Homepage activity
+                                Intent intent = new Intent(getApplicationContext(),HomeActivity.class); //<-- Replace activity_home with Homepage activity
                                 intent.putExtra("username", save_username);
                                 intent.putExtra("email", save_email);
                                 intent.putExtra("phone", save_phone);

@@ -63,15 +63,16 @@ Button btn;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
      View rootView= inflater.inflate(R.layout.fragment_account, container, false);
-    btn =(Button)rootView.findViewById(R.id.showSeats) ;
-    btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            //Toast.makeText(getActivity(), "hiii", Toast.LENGTH_SHORT).show();
-           Intent it =new Intent(getActivity(),SelecteSeat.class);
-            startActivity(it);
-        }
-    });
+     // code to navigate to select Seat page  ---by vineet
+//    btn =(Button)rootView.findViewById(R.id.showSeats) ;
+//    btn.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            //Toast.makeText(getActivity(), "hiii", Toast.LENGTH_SHORT).show();
+//           Intent it =new Intent(getActivity(),SelecteSeat.class);
+//            startActivity(it);
+//        }
+//    });
     return rootView;
     }
 }

@@ -141,7 +141,7 @@ public class FacebookAuthActivity extends AppCompatActivity {
                                     editor.putString("Phone", phone);
                                     editor.apply();
 
-                                    Intent intent = new Intent(getApplicationContext(), com.example.home.activity_home.class);
+                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                     StyleableToast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
                                     startActivity(intent);
 
