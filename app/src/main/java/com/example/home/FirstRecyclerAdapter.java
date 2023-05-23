@@ -71,7 +71,7 @@ public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdap
         return arrFirst.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView movieimg;
         TextView moviename, moviegenre;
         public ViewHolder(@NonNull View itemView) {

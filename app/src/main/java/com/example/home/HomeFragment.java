@@ -110,9 +110,9 @@ public class HomeFragment extends Fragment {
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster4, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
         if(isNetworkConnected()){
             loadFirstRec();
-            loadSecondRec();
-            loadThirdRec();
-            loadFourthRec();
+//            loadSecondRec();
+//            loadThirdRec();
+//            loadFourthRec();
         }else{
             Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_LONG).show();
         }
