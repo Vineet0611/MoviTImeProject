@@ -45,15 +45,15 @@ public class SecondRecyclerAdapter extends RecyclerView.Adapter<SecondRecyclerAd
                     .load(arrSecond.get(position).img)
                     .placeholder(R.drawable.no_image)
                     .into(holder.movieimg);
-        Log.d("volleyholder ", "Second glide img ssuccess: ");
+        Log.d("volleyholder ", "Third glide img success: ");
         }else{
         holder.movieimg.setBackgroundResource(R.drawable.no_image);
         }
 //      holder.movieimg.setImageResource(arrFirst.get(position).img);
         holder.moviename.setText(arrSecond.get(position).mName);
-        Log.d("volleyholder ", "Second movie name ssuccess: ");
+        Log.d("volleyholder ", "Third movie name success: ");
         holder.moviegenre.setText(arrSecond.get(position).mGenre);
-        Log.d("volleyholder ", "Second genre ssuccess: ");
+        Log.d("volleyholder ", "Third genre success: ");
   holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

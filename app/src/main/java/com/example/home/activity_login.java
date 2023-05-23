@@ -114,9 +114,13 @@ public class activity_login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validation()) {
-                    checkLoginCredentials();
-                }
+
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);  //<-- Temp Code
+                startActivity(intent);
+                finish();
+//                if (validation()) {    <-- Temporary commenting this code for testing...
+//                    checkLoginCredentials();
+//                }
             }
         });
 

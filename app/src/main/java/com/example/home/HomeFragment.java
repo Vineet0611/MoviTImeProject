@@ -53,6 +53,8 @@ public class HomeFragment extends Fragment {
     ArrayList<ThirdRecycler> arrThird =new ArrayList<>();
     ArrayList<FourthRecycler> arrFourth =new ArrayList<>();
 
+
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -106,15 +108,14 @@ public class HomeFragment extends Fragment {
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster2, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster3, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
 //            arrFirst.add(new FirstRecycler(R.drawable.temp_poster4, "Avatar: The Way of Water", "Action, Drama, Sci-fi"));
-    if(isNetworkConnected()){
-
-                loadFirstRec();
-                loadSecondRec();
-                loadThirdRec();
-                loadFourthRec();
-    }else{
-        Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_LONG).show();
-    }
+        if(isNetworkConnected()){
+            loadFirstRec();
+            loadSecondRec();
+            loadThirdRec();
+            loadFourthRec();
+        }else{
+            Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_LONG).show();
+        }
 
 
     }
@@ -125,7 +126,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(String response) {
                         try {
                             JSONArray list1 = new JSONArray(response);
-                            for(int i=0; i<= list1.length()-1; i++){
+                            for(int i=0; i<list1.length(); i++){
                                 JSONObject list1Objects = list1.getJSONObject(i);
                                 String mName = list1Objects.getString("movie_name");
                                 String mGenre = list1Objects.getString("movie_genre");
@@ -134,7 +135,7 @@ public class HomeFragment extends Fragment {
                                 FirstRecycler firstRecycler = new FirstRecycler(mImg, mName, mGenre);
                                 arrFirst.add(firstRecycler);
                             }
-                                Log.d("volley arrfirst","Data"+ arrFirst.toString());
+                                Log.d("volley","arrfirstData"+ arrFirst.toString());
 
                                 FirstRecyclerAdapter fadapter = new FirstRecyclerAdapter(getActivity(), arrFirst);
                                 recyclerView1.setAdapter(fadapter);
@@ -161,7 +162,7 @@ public class HomeFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
                 Volley.newRequestQueue(getActivity()).add(stringRequest);
-                Log.d("volley ", "queued success: ");
+                Log.d("volley ", "first queued success: ");
 
     }
     private void  loadSecondRec(){
@@ -171,7 +172,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(String response) {
                         try {
                             JSONArray list2 = new JSONArray(response);
-                            for(int i=0; i<= list2.length()-1; i++){
+                            for(int i=0; i< list2.length(); i++){
                                 JSONObject list2Objects = list2.getJSONObject(i);
                                 String mName = list2Objects.getString("movie_name");
                                 String mGenre = list2Objects.getString("movie_genre");
@@ -180,11 +181,11 @@ public class HomeFragment extends Fragment {
                                 SecondRecycler secondRecycler = new SecondRecycler(mImg, mName, mGenre);
                                 arrSecond.add(secondRecycler);
                             }
-                            Log.d("volley arrSecond","Data"+ arrSecond.toString());
+                            Log.d("volley","arrSecondData"+ arrSecond.toString());
 
                             SecondRecyclerAdapter fadapter = new SecondRecyclerAdapter(getActivity(), arrSecond);
                             recyclerView2.setAdapter(fadapter);
-                            Log.d("volley ", "second set adapter ");
+                            Log.d("volley", "second set adapter");
 
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -217,7 +218,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(String response) {
                         try {
                             JSONArray list3 = new JSONArray(response);
-                            for(int i=0; i<= list3.length()-1; i++){
+                            for(int i=0; i<list3.length(); i++){
                                 JSONObject list3Objects = list3.getJSONObject(i);
                                 String mName = list3Objects.getString("movie_name");
                                 String mGenre = list3Objects.getString("movie_genre");
@@ -226,7 +227,7 @@ public class HomeFragment extends Fragment {
                                 ThirdRecycler thirdRecycler = new ThirdRecycler(mImg, mName, mGenre);
                                 arrThird.add(thirdRecycler);
                             }
-                            Log.d("volley arrThird","Data"+ arrThird.toString());
+                            Log.d("volley","arrThirdData"+ arrThird.toString());
 
                             ThirdRecyclerAdapter fadapter = new ThirdRecyclerAdapter(getActivity(), arrThird);
                             recyclerView3.setAdapter(fadapter);
@@ -253,7 +254,7 @@ public class HomeFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         Volley.newRequestQueue(getActivity()).add(stringRequest);
-        Log.d("volley ", " Second queued success: ");
+        Log.d("volley ", "Third queued success: ");
     }
     private void loadFourthRec(){
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url4,
@@ -262,7 +263,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(String response) {
                         try {
                             JSONArray list4 = new JSONArray(response);
-                            for(int i=0; i<=list4.length()-1; i++){
+                            for(int i=0; i<list4.length(); i++){
                                 JSONObject list4Objects = list4.getJSONObject(i);
                                 String mName = list4Objects.getString("movie_name");
                                 String mGenre = list4Objects.getString("movie_genre");
@@ -271,7 +272,7 @@ public class HomeFragment extends Fragment {
                                 FourthRecycler fourthRecycler = new FourthRecycler(mImg, mName, mGenre);
                                 arrFourth.add(fourthRecycler);
                             }
-                            Log.d("volley arrFourth","Data"+ arrFourth.toString());
+                            Log.d("volley","arrFourthData"+ arrFourth.toString());
 
                             FourthRecyclerAdapter fadapter = new FourthRecyclerAdapter(getActivity(), arrFourth);
                             recyclerView4.setAdapter(fadapter);
@@ -300,6 +301,8 @@ public class HomeFragment extends Fragment {
         Volley.newRequestQueue(getActivity()).add(stringRequest);
         Log.d("volley ", " Second queued success: ");
     }
+
+
   @SuppressLint("MissingPermission")
   private boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
