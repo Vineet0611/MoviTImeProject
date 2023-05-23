@@ -83,6 +83,7 @@ public class activity_verification extends AppCompatActivity {
             }
         });
     }
+
     private void resendOtp() {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 "+91" + getIntent().getStringExtra("phone_number"),
@@ -108,6 +109,7 @@ public class activity_verification extends AppCompatActivity {
 
         );
     }
+
     private void checkOtp() {
         if (getOTP != null) {
             PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(getOTP, userOTP);
@@ -127,6 +129,7 @@ public class activity_verification extends AppCompatActivity {
             Toast.makeText(activity_verification.this, "An Unexpected Error Occur Please Resend The OTP", Toast.LENGTH_LONG).show();
         }
     }
+
     private void saveData() {
 
         SharedPreferences getSharedData = getSharedPreferences("MovieTime", MODE_PRIVATE);
@@ -138,23 +141,18 @@ public class activity_verification extends AppCompatActivity {
         String getId = getSharedData.getString("FG_ID", "Data Not Found");
 
 
-        if (getUsername.equals("Data Not Found") || getEmail.equals("Data Not Found") || getPhone.equals("Data Not Found") || getId.equals("Data Not Found")) {
-            StyleableToast.makeText(getApplicationContext(), "Data Not Found", Toast.LENGTH_LONG, R.style.error_toast).show();
-        }
-
-        else {
-            if (facebook_status.equals("true")) {
-                insertData("Facebook", getUsername, getEmail, getPhone, getId);
-            } else if (google_status.equals("true")) {
-                insertData("Google", getUsername, getEmail, getPhone, getId);
-            } else {
-                Intent intent = new Intent(getApplicationContext(), activity_login.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                StyleableToast.makeText(getApplicationContext(), "Register Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
-                startActivity(intent);
-            }
+        if (facebook_status.equals("true")) {
+            insertData("Facebook", getUsername, getEmail, getPhone, getId);
+        } else if (google_status.equals("true")) {
+            insertData("Google", getUsername, getEmail, getPhone, getId);
+        } else {
+            Intent intent = new Intent(getApplicationContext(), activity_login.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            StyleableToast.makeText(getApplicationContext(), "Register Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
+            startActivity(intent);
         }
     }
+
     private void insertData(String loginType, String getUsername, String getEmail, String getPhone, String getId) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -193,11 +191,11 @@ public class activity_verification extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> paramV = new HashMap<>();
 
-                    paramV.put(loginType, "true");
-                    paramV.put("FG_Id", getId);
-                    paramV.put("Username", getUsername);
-                    paramV.put("Email", getEmail);
-                    paramV.put("Phone", getPhone);
+                paramV.put(loginType, "true");
+                paramV.put("FG_Id", getId);
+                paramV.put("Username", getUsername);
+                paramV.put("Email", getEmail);
+                paramV.put("Phone", getPhone);
 
                 return paramV;
             }
@@ -205,14 +203,17 @@ public class activity_verification extends AppCompatActivity {
         queue.add(stringRequest);
 
     }
+
     private void setOtp() {
         userOTP = et1.getText().toString() + et2.getText().toString() + et3.getText().toString() + et4.getText().toString() + et5.getText().toString() + et6.getText().toString();
     }
+
     private void setPhoneNo() {
         phone_no.setText(String.format(
                 "+91-%S", getIntent().getStringExtra("phone_number")
         ));
     }
+
     private void moveToNextTextBox() {
 
         et1.addTextChangedListener(new TextWatcher() {
@@ -315,6 +316,7 @@ public class activity_verification extends AppCompatActivity {
             }
         });
     }
+
     private boolean validation() {
         if (et1.getText().toString().trim().isEmpty() || et2.getText().toString().trim().isEmpty() || et3.getText().toString().trim().isEmpty()
                 || et4.getText().toString().trim().isEmpty() || et5.getText().toString().trim().isEmpty() || et6.getText().toString().trim().isEmpty()) {
