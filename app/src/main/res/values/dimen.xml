@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <dimen name="padding1">1dp</dimen>
     <dimen name="padding2">2dp</dimen>
     <dimen name="padding3">3dp</dimen>
     <dimen name="padding0">0</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
