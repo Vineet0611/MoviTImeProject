@@ -40,8 +40,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:contentDescription="MovieImage"
-                        android:src="@drawable/temp_image" />
+                        android:contentDescription="MovieImage" />
 
                     <ImageView
                         android:id="@+id/movieimgshadow"
@@ -109,7 +108,7 @@
                             android:layout_height="@dimen/_23sdp"
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_marginRight="@dimen/_10sdp"
-                            android:text="Avatar the way of water"
+                            android:text=""
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_18ssp"
@@ -121,7 +120,7 @@
                             android:layout_height="@dimen/_17sdp"
                             android:layout_marginLeft="@dimen/_10sdp"
                             android:layout_marginRight="@dimen/_10sdp"
-                            android:text="Action, Drama, Horror"
+                            android:text=""
                             android:textAlignment="viewStart"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14ssp" />
@@ -152,7 +151,7 @@
                             android:textAlignment="center">
 
                             <ImageView
-                                android:id="@+id/trailerSymbol"
+                                android:id="@+id/trailerlogo"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:contentDescription="trailer"
@@ -240,6 +239,7 @@
                                 android:textSize="@dimen/_11ssp" />
 
                             <TextView
+                                android:id="@+id/duration"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="2 hrs 55 min"
@@ -260,12 +260,12 @@
                     android:textSize="@dimen/_14ssp" />
 
                 <TextView
+                    android:id="@+id/movieabout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="bhdsf bhgfbsdfc jnvhiurtmhf gjbifgd fsdfhuivchd nvufhdivufv nvuihuif hiuvhdfvf nvufhiufg nviudfhvuifd nvuifhuihfiuvnfd"
                     android:textAlignment="viewStart"
                     android:textColor="#FFD7D7D7"
                     android:textSize="@dimen/_12ssp" />
@@ -286,6 +286,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:text="Released On: "
+                            android:textStyle="bold"
                             android:textAlignment="viewStart"
                             android:textColor="#FFD7D7D7"
                             android:textSize="@dimen/_12ssp" />
@@ -312,6 +313,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:text="Languages: "
+                            android:textStyle="bold"
                             android:textAlignment="viewStart"
                             android:textColor="#FFD7D7D7"
                             android:textSize="@dimen/_12ssp" />
@@ -337,6 +339,7 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:text="Screen Type: "
+                            android:textStyle="bold"
                             android:textAlignment="viewStart"
                             android:textColor="#FFD7D7D7"
                             android:textSize="@dimen/_12ssp" />
