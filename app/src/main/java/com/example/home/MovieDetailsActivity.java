@@ -37,6 +37,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
@@ -101,10 +102,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             moviequality.setText(movie_quality);
                             movieduration.setText(movie_duration);
                             moviereleased.setText(movie_released);
-                            Glide.with(MovieDetailsActivity.this)
-                                    .load(movie_img)
-                                    .placeholder(R.drawable.no_image)
-                                    .into(movieimg);
+                            if(!Objects.equals(movie_img, "Image path not found")) {
+                                Glide.with(MovieDetailsActivity.this)
+                                        .load(movie_img)
+                                        .placeholder(R.drawable.no_image)
+                                        .into(movieimg);
+                            }else {
+                                movieimg.setBackgroundResource(R.drawable.no_image);
+                            }
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }

@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class SecondRecyclerAdapter extends RecyclerView.Adapter<SecondRecyclerAdapter.ViewHolder> {
@@ -40,7 +41,7 @@ public class SecondRecyclerAdapter extends RecyclerView.Adapter<SecondRecyclerAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(arrSecond.get(position).img != null) {
+        if(!Objects.equals(arrSecond.get(position).img, "Image path not available")) {
             Glide.with(context)
                     .load(arrSecond.get(position).img)
                     .placeholder(R.drawable.no_image)
