@@ -40,7 +40,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "MovieDetailsActivity";
     Button btn;
-    TextView moviename;
+    TextView moviename, moviegenre;
     String movie_name= "NA";
     String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
     static JSONArray myJsonArray = new JSONArray();
@@ -52,6 +52,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         btn = findViewById(R.id.bookButton);
         moviename = findViewById(R.id.moviename);
+        moviename = findViewById(R.id.moviegenre);
 
         if(getIntent().hasExtra("movie_name") ){
             movie_name = getIntent().getStringExtra("movie_name");
@@ -73,8 +74,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //                            Log.d("movie ", "myJsonObj created");
 //                            movie_genre = myJsonArray.getJSONObject(0).getString("movie_genre");
 //                            Log.d("movie ", "movie_genre done");
-                            Toast.makeText(MovieDetailsActivity.this, response, Toast.LENGTH_LONG).show();
-
+//                            Toast.makeText(MovieDetailsActivity.this, response, Toast.LENGTH_LONG).show();
+                                moviegenre.setText(response);
 //                        } catch (JSONException e) {
 //                            throw new RuntimeException(e);
 //                        }
@@ -93,7 +94,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
                 params.put("moviename", movie_name);
-                return getParams();
+                return super.getParams();
             }
         };
                 stringRequest.setRetryPolicy(new DefaultRetryPolicy(
