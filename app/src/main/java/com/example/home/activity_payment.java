@@ -111,9 +111,9 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
     private void calculatePayment() {
         int amt = Integer.parseInt(payment_txt.getText().toString().trim());
         total = amt + 18;
-        String serviceFees = "INR 18.00";
-        String totalPayment = "Book Now | INR " + total + ".00";
-        String PaymentTxt = "INR " + total + ".00";
+        String serviceFees = "₹18.00";
+        String totalPayment = "Book Now | ₹" + total + ".00";
+        String PaymentTxt = "₹" + total + ".00";
         service_fees.setText(serviceFees);
         payment_txt.setText(PaymentTxt);
         book_now.setText(totalPayment);
