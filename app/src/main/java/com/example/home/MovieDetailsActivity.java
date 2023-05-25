@@ -28,6 +28,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.home.databinding.ActivityMovieDetailsBinding;
 
@@ -35,6 +36,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -44,10 +46,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private static final String TAG = "MovieDetailsActivity";
     Button btn;
     TextView moviename, moviegenre, movieabout, movielanguage, moviequality, movieduration, moviereleased;
-    String movie_name= "NA";
     ImageView movietrailer, movieimg;
-    String movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
-    String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
+    RecyclerView castRecycler;
+    String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
+    private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
+    private static final String castUrl = "https://inundated-lenders.000webhostapp.com/api/cast.php";
+    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
+    ArrayList<CastRecycler> arrCast =new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,17 +70,22 @@ public class MovieDetailsActivity extends AppCompatActivity {
         movietrailer = findViewById(R.id.trailerlogo);
         movieimg = findViewById(R.id.movieimg);
 
+        castRecycler=findViewById(R.id.castRecycler);
+
 
         if(getIntent().hasExtra("movie_name") ){
             movie_name = getIntent().getStringExtra("movie_name");
             moviename.setText(movie_name);
             getDetails();
+
         }
-
-
+        else{
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
-    private void getDetails(){
+    public void getDetails(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -110,6 +120,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             }else {
                                 movieimg.setBackgroundResource(R.drawable.no_image);
                             }
+                            castDetails();
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
@@ -138,6 +149,60 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(MovieDetailsActivity.this).add(stringRequest);
         Log.d("movie ", "queued success");
-    }
 
+    }
+    public void castDetails(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, castUrl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray castList = new JSONArray(response);
+                            for(int i=0; i<castList.length(); i++){
+                                JSONObject castObjects = castList.getJSONObject(i);
+                                String cImg = castObjects.getString("cast_img");
+                                String cName = castObjects.getString("cast_name");
+                                String cRole = castObjects.getString("cast_role");
+
+                                CastRecycler castRecycler = new CastRecycler(cImg, cName, cRole);
+                                arrCast.add(castRecycler);
+                            }
+                            Log.d("volley","arrCastData"+ arrCast);
+
+                            CastRecyclerAdapter fadapter = new CastRecyclerAdapter(MovieDetailsActivity.this , arrCast);
+                            castRecycler.setAdapter(fadapter);
+                            Log.d("volley ", "Cast set adapter ");
+
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(MovieDetailsActivity.this, "" + error.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e("volley", "Cast LogE " + error.getMessage());
+
+                    }
+
+                }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("movieid", movie_id);
+                return params;
+            }
+        };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                50000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        Volley.newRequestQueue(this).add(stringRequest);
+        Log.d("volley ", "Cast queued success: ");
+    }
 }
+

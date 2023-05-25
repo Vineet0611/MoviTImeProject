@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class FourthRecyclerAdapter extends RecyclerView.Adapter<FourthRecyclerAdapter.ViewHolder> {
@@ -40,7 +41,7 @@ public class FourthRecyclerAdapter extends RecyclerView.Adapter<FourthRecyclerAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(arrFourth.get(position).img != null) {
+        if(!Objects.equals(arrFourth.get(position).img, "Image Path not available")) {
             Glide.with(context)
                     .load(arrFourth.get(position).img)
                     .placeholder(R.drawable.no_image)
@@ -69,7 +70,7 @@ public class FourthRecyclerAdapter extends RecyclerView.Adapter<FourthRecyclerAd
         return arrFourth.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView movieimg;
         TextView moviename, moviegenre;
         public ViewHolder(@NonNull View itemView) {
