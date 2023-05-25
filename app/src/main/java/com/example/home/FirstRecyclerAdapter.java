@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdapter.ViewHolder> {
@@ -41,11 +42,12 @@ public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(arrFirst.get(position).img != null){
+        if(!Objects.equals(arrFirst.get(position).img, "Image Path not available")) {
         Glide.with(context)
                 .load(arrFirst.get(position).img)
                 .placeholder(R.drawable.no_image)
                 .into(holder.movieimg);
+
         Log.d("volleyholder ", "glide img ssuccess: ");
         }else{
             holder.movieimg.setBackgroundResource(R.drawable.no_image);
@@ -54,8 +56,8 @@ public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdap
         Log.d("volleyholder ", "movie name ssuccess: ");
         holder.moviegenre.setText(arrFirst.get(position).mGenre);
         Log.d("volleyholder ", "genre ssuccess: ");
- 
- 
+
+
  			holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +73,7 @@ public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdap
         return arrFirst.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView movieimg;
         TextView moviename, moviegenre;
         public ViewHolder(@NonNull View itemView) {

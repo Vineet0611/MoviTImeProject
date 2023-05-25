@@ -35,6 +35,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class HomeFragment extends Fragment {
@@ -161,7 +162,7 @@ public class HomeFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-                Volley.newRequestQueue(getActivity()).add(stringRequest);
+                Volley.newRequestQueue(requireActivity()).add(stringRequest);
                 Log.d("volley ", "first queued success: ");
 
     }
@@ -207,7 +208,7 @@ public class HomeFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        Volley.newRequestQueue(getActivity()).add(stringRequest);
+        Volley.newRequestQueue(requireActivity()).add(stringRequest);
         Log.d("volley ", " Second queued success: ");
 
     }
@@ -253,7 +254,7 @@ public class HomeFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        Volley.newRequestQueue(getActivity()).add(stringRequest);
+        Volley.newRequestQueue(requireActivity()).add(stringRequest);
         Log.d("volley ", "Third queued success: ");
     }
     private void loadFourthRec(){
@@ -293,13 +294,13 @@ public class HomeFragment extends Fragment {
 
                 });
 
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                stringRequest.setRetryPolicy(new DefaultRetryPolicy(
                 50000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        Volley.newRequestQueue(getActivity()).add(stringRequest);
-        Log.d("volley ", " Second queued success: ");
+        Volley.newRequestQueue(requireActivity()).add(stringRequest);
+        Log.d("volley ", "fourth queued success: ");
     }
 
 

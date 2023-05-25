@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/_10sdp"
-    android:layout_marginRight="@dimen/_7sdp"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_7sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -37,11 +37,12 @@
                 android:layout_height="@dimen/_12sdp"
                 android:text="Avatar: The way of water "
                 android:textColor="@color/black"
-                    android:textSize="@dimen/_10ssp"
+                android:textSize="@dimen/_10ssp"
                 android:textAlignment="viewStart"
-                    android:paddingLeft="@dimen/_5sdp"
-                    android:layout_weight="1"
-                android:textStyle="bold"/>
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:textStyle="normal"/>
 
                 <TextView
                     android:id="@+id/moviegenre"
@@ -49,7 +50,8 @@
                     android:layout_height="@dimen/_15sdp"
                     android:text="Drama/ Action/ Horror/ Thriller"
                     android:textAlignment="viewStart"
-                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_2sdp"
                     android:layout_weight="1"
                     android:textSize="@dimen/_7ssp"
                     android:textColor="@color/darkgrey" />

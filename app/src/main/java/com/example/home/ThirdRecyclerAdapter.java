@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdapter.ViewHolder> {
@@ -40,7 +41,7 @@ public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(arrThird.get(position).img != null) {
+        if(!Objects.equals(arrThird.get(position).img, "Image Path not available")) {
             Glide.with(context)
                     .load(arrThird.get(position).img)
                     .placeholder(R.drawable.no_image)
@@ -69,7 +70,7 @@ public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdap
         return arrThird.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView movieimg;
         TextView moviename, moviegenre;
         public ViewHolder(@NonNull View itemView) {
