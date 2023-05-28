@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,9 @@ import io.github.muddz.styleabletoast.StyleableToast;
 
 public class activity_login extends AppCompatActivity {
 
+
+    ProgressBar progressBar;
+    RelativeLayout rl;
     Boolean isValid;
     TextView signup_txt, forgot_pswd;
     EditText username, password;
@@ -58,6 +63,9 @@ public class activity_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        rl = (RelativeLayout) findViewById(R.id.progress_bar_layout);
 
         signup_txt = findViewById(R.id.txt_signup);
         forgot_pswd = findViewById(R.id.txt_forgot_password);
@@ -119,6 +127,8 @@ public class activity_login extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 if (validation()) {    //<-- Temporary commenting this code for testing...
+                    progressBar.setVisibility(View.VISIBLE);
+                    rl.setVisibility(View.VISIBLE);
                     checkLoginCredentials();
                 }
             }
@@ -127,6 +137,8 @@ public class activity_login extends AppCompatActivity {
         google_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
+                rl.setVisibility(View.VISIBLE);
                 googleLogin();
             }
         });
@@ -193,12 +205,17 @@ public class activity_login extends AppCompatActivity {
                                 intent.putExtra("email", save_email);
                                 intent.putExtra("phone", save_phone);
 
+                                progressBar.setVisibility(View.GONE);
+                                rl.setVisibility(View.GONE);
+
                                 StyleableToast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
                                 startActivity(intent);
                                 finish();
                             }
 
                             else if(status.equals("error")) {
+                                progressBar.setVisibility(View.GONE);
+                                rl.setVisibility(View.GONE);
                                 String errorMsg = jsonObject.getString("error");
                                 StyleableToast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_LONG, R.style.error_toast).show();
                             }
@@ -319,17 +336,27 @@ public class activity_login extends AppCompatActivity {
                                 editor.putString("Phone", phone);
                                 editor.apply();
 
+                                progressBar.setVisibility(View.GONE);
+                                rl.setVisibility(View.GONE);
+
                                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 StyleableToast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
                                 startActivity(intent);
                             }
 
                             else if(status.equals("google_signup")) {
+
+                                progressBar.setVisibility(View.GONE);
+                                rl.setVisibility(View.GONE);
+
                                 Intent intent = new Intent(getApplicationContext(), activity_email_phone.class);
                                 startActivity(intent);
                             }
 
                             else if(status.equals("error")) {
+                                progressBar.setVisibility(View.GONE);
+                                rl.setVisibility(View.GONE);
+
                                 String errorMsg = jsonObject.getString("error");
                                 StyleableToast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_LONG, R.style.error_toast).show();
                             }
