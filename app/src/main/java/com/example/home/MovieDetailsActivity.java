@@ -151,8 +151,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
-                        Toast.makeText(MovieDetailsActivity.this, movie_id, Toast.LENGTH_SHORT).show();
-
                     }
                 },
                 new Response.ErrorListener() {

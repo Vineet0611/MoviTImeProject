@@ -53,8 +53,6 @@ public class CalendarRecyclerAdapter extends RecyclerView.Adapter<CalendarRecycl
         this.calendarList = calendarList;
     }
 
-
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -3,6 +3,7 @@ package com.example.home;
 import static android.content.Context.MODE_PRIVATE;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
+import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -125,28 +126,28 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
                         @Override
                         public void onResponse(String response) {
                             try {
-                                if (response != "no record found"){
+                                if (response == "no"){
+                                    Toast.makeText(getApplicationContext(),"No record found", Toast.LENGTH_SHORT).show();
+                                }else{
                                     JSONArray tList = new JSONArray(response);
                                     for(int i=0; i<tList.length(); i++){
-                                    JSONObject theatreListObjects = tList.getJSONObject(i);
-                                    String tId = theatreListObjects.getString("theatre_id");
-                                    String tName = theatreListObjects.getString("theatre_name");
-                                    String language = theatreListObjects.getString("show_language");
-                                    String screen = theatreListObjects.getString("screen_type");
-                                    String date = theatreListObjects.getString("show_date");
-                                    String showid = theatreListObjects.getString("show_id");
-                                    String time = theatreListObjects.getString("show_time");
+                                        JSONObject theatreListObjects = tList.getJSONObject(i);
+                                        String tId = theatreListObjects.getString("theatre_id");
+                                        String tName = theatreListObjects.getString("theatre_name");
+                                        String language = theatreListObjects.getString("show_language");
+                                        String screen = theatreListObjects.getString("screen_type");
+                                        String date = theatreListObjects.getString("show_date");
+                                        String showid = theatreListObjects.getString("show_id");
+                                        String time = theatreListObjects.getString("show_time");
 
-                                    TheatreRecycler tRecycler = new TheatreRecycler(tName, language, screen, showid, time, tId, date);
-                                    theatreList.add(tRecycler);
+                                        TheatreRecycler tRecycler = new TheatreRecycler(tName, language, screen, showid, time, tId, date);
+                                        theatreList.add(tRecycler);
                                     }
                                     Log.d("theatre","arrtheatreData"+ theatreList);
 
                                     TheatreListRecyclerAdapter fadapter = new TheatreListRecyclerAdapter(getApplicationContext() , theatreList);
                                     theatreRecycler.setAdapter(fadapter);
                                     Log.d("theatre", "Theatre set adapter");
-                                }else{
-                                    Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                                 }
 
                             } catch (JSONException e) {
