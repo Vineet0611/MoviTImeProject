@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_50sdp"
+    android:orientation="vertical"
+    android:background="@color/teal_200"
+    android:paddingStart="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp">
+
+<!--            <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="05-02-2023"-->
+<!--            android:textSize="@dimen/_5ssp"-->
+<!--            android:visibility="visible"-->
+<!--            android:textColor="@color/black"/>-->
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/_20ssp"/>
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sun"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/_14ssp"/>
+
+
+
+
+</LinearLayout>

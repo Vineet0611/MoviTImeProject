@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.home.databinding.ActivityMovieDetailsBinding;
@@ -44,7 +46,9 @@ import java.util.Objects;
 public class MovieDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "MovieDetailsActivity";
-    Button btn;
+    private long lastClick = 0;
+    Boolean flag = false;
+    Button bookbtn;
     TextView moviename, moviegenre, movieabout, movielanguage, moviequality, movieduration, moviereleased;
     ImageView movietrailer, movieimg;
     RecyclerView castRecycler;
@@ -59,7 +63,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        btn = findViewById(R.id.bookButton);
+        bookbtn = findViewById(R.id.bookButton);
         moviename = findViewById(R.id.moviename);
         moviegenre = findViewById(R.id.moviegenre);
         movieabout = findViewById(R.id.movieabout);
@@ -71,6 +75,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         movieimg = findViewById(R.id.movieimg);
 
         castRecycler=findViewById(R.id.castRecycler);
+        castRecycler.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
 
 
         if(getIntent().hasExtra("movie_name") ){
@@ -83,6 +88,24 @@ public class MovieDetailsActivity extends AppCompatActivity {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
             finish();
         }
+
+        if(flag){
+            castDetails();
+        }
+
+
+        bookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClick < 2000){  //Single Click
+                return;
+                }
+                lastClick = SystemClock.elapsedRealtime();
+                TheatreListFragment theatreListFragment = new TheatreListFragment();
+                theatreListFragment.show(getSupportFragmentManager(),theatreListFragment.getTag());
+                }
+        });
+
     }
 
     public void getDetails(){
@@ -124,6 +147,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+                        flag = true;
                     }
                 },
                 new Response.ErrorListener() {
@@ -204,5 +228,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
         Log.d("volley ", "Cast queued success: ");
     }
+
+
+
+
+
+
 }
 
