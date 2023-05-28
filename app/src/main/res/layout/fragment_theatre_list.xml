@@ -20,8 +20,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRecycler"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
-            android:background="#FFEB3B"/>
+            android:layout_height="wrap_content"/>
 
         <View
             android:layout_width="match_parent"

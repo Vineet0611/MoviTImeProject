@@ -49,7 +49,6 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
 
         calendarRecycler = (RecyclerView)view.findViewById(R.id.calendarRecycler);
         calendarRecycler.setLayoutManager(new LinearLayoutManager(view.getContext(), RecyclerView.HORIZONTAL, false));
-//        CalendarView calendar = requireActivity().findViewById(R.id.calendar);
 
         return view;
     }
@@ -68,12 +67,13 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
             for(int i =1 ; i<=15; i++){
                 LocalDate date =  t.plusDays(i);
                 LocalDate dateparse = LocalDate.parse(""+ date);
+                String d = date.toString();
                 DayOfWeek dayOfWeek = dateparse.getDayOfWeek();
                 String s =  dayOfWeek.toString().substring(0, 3);
                 int dayOfMonth = dateparse.getDayOfMonth();
                 String ss = Integer.toString(dayOfMonth);
                 Log.d("calendar" ,s + ss);
-                CalendarRecycler calendarRecycler = new CalendarRecycler(s, ss);
+                CalendarRecycler calendarRecycler = new CalendarRecycler(ss, s, d);
                 calendarList.add(calendarRecycler);
                 Log.d("calendar" ,"List Set");
             }

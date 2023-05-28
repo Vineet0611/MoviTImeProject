@@ -55,7 +55,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
     private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
     private static final String castUrl = "https://inundated-lenders.000webhostapp.com/api/cast.php";
-    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
+//    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
     ArrayList<CastRecycler> arrCast =new ArrayList<>();
 
     @Override
@@ -89,9 +89,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
             finish();
         }
 
-        if(flag){
-            castDetails();
-        }
+//        if(flag){
+//            castDetails();
+//        }
 
 
         bookbtn.setOnClickListener(new View.OnClickListener() {
@@ -136,17 +136,17 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             movieduration.setText(movie_duration);
                             moviereleased.setText(movie_released);
                             if(!Objects.equals(movie_img, "Image path not found")) {
-                                Glide.with(MovieDetailsActivity.this)
+                                Glide.with(getApplicationContext())
                                         .load(movie_img)
                                         .placeholder(R.drawable.no_image)
                                         .into(movieimg);
                             }else {
                                 movieimg.setBackgroundResource(R.drawable.no_image);
                             }
-                            castDetails();
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+                        Toast.makeText(MovieDetailsActivity.this, movie_id, Toast.LENGTH_SHORT).show();
                         flag = true;
                     }
                 },

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,12 +48,16 @@ public class CalendarRecyclerAdapter extends RecyclerView.Adapter<CalendarRecycl
         Log.d("calendar ", "date ssuccess: ");
         holder.day.setText(calendarList.get(position).day);
         Log.d("calendar ", "day ssuccess: ");
+        holder.hdate.setText(calendarList.get(position).hiddenDate);
+        Log.d("calendar ", "day ssuccess: ");
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String date = calendarList.get(holder.getLayoutPosition()).hiddenDate;
+                Toast.makeText(view.getContext(), date, Toast.LENGTH_SHORT).show();
+//                holder.itemView.setBackgroundColor(R.drawable.background_colored);
             }
         });
     }
@@ -64,13 +69,14 @@ public class CalendarRecyclerAdapter extends RecyclerView.Adapter<CalendarRecycl
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView date, day;
+        TextView date, day, hdate;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
 
             date = itemView.findViewById(R.id.date);
             day = itemView.findViewById(R.id.day);
+            hdate = itemView.findViewById(R.id.invisibledate);
         }
     }
 }
