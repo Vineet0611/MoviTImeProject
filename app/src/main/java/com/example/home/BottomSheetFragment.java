@@ -22,6 +22,8 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.util.Objects;
+
 
 public class BottomSheetFragment extends BottomSheetDialogFragment {
 
@@ -39,7 +41,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bottom_sheet, container, false);
 
-        location = getActivity().findViewById(R.id.location);
+        location = requireActivity().findViewById(R.id.location);
 
         ahemdabad = (ImageButton) view.findViewById(R.id.ahamdabad);
         banglore = (ImageButton) view.findViewById(R.id.banglore);
@@ -161,8 +163,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
 
     }
 

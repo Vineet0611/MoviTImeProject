@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.home.databinding.ActivityMovieDetailsBinding;
@@ -44,14 +46,16 @@ import java.util.Objects;
 public class MovieDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "MovieDetailsActivity";
-    Button btn;
+    private long lastClick = 0;
+    Boolean flag = false;
+    Button bookbtn;
     TextView moviename, moviegenre, movieabout, movielanguage, moviequality, movieduration, moviereleased;
     ImageView movietrailer, movieimg;
     RecyclerView castRecycler;
     String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
     private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
     private static final String castUrl = "https://inundated-lenders.000webhostapp.com/api/cast.php";
-    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
+//    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
     ArrayList<CastRecycler> arrCast =new ArrayList<>();
 
     @Override
@@ -59,7 +63,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        btn = findViewById(R.id.bookButton);
+        bookbtn = findViewById(R.id.bookButton);
         moviename = findViewById(R.id.moviename);
         moviegenre = findViewById(R.id.moviegenre);
         movieabout = findViewById(R.id.movieabout);
@@ -71,6 +75,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         movieimg = findViewById(R.id.movieimg);
 
         castRecycler=findViewById(R.id.castRecycler);
+        castRecycler.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
 
 
         if(getIntent().hasExtra("movie_name") ){
@@ -83,6 +88,24 @@ public class MovieDetailsActivity extends AppCompatActivity {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
             finish();
         }
+
+//        if(flag){
+//            castDetails();
+//        }
+
+
+        bookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClick < 2000){  //Single Click
+                return;
+                }
+                lastClick = SystemClock.elapsedRealtime();
+                TheatreListFragment theatreListFragment = new TheatreListFragment();
+                theatreListFragment.show(getSupportFragmentManager(),theatreListFragment.getTag());
+                }
+        });
+
     }
 
     public void getDetails(){
@@ -113,17 +136,18 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             movieduration.setText(movie_duration);
                             moviereleased.setText(movie_released);
                             if(!Objects.equals(movie_img, "Image path not found")) {
-                                Glide.with(MovieDetailsActivity.this)
+                                Glide.with(getApplicationContext())
                                         .load(movie_img)
                                         .placeholder(R.drawable.no_image)
                                         .into(movieimg);
                             }else {
                                 movieimg.setBackgroundResource(R.drawable.no_image);
                             }
-                            castDetails();
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+                        Toast.makeText(MovieDetailsActivity.this, movie_id, Toast.LENGTH_SHORT).show();
+                        flag = true;
                     }
                 },
                 new Response.ErrorListener() {
@@ -204,5 +228,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
         Log.d("volley ", "Cast queued success: ");
     }
+
+
+
+
+
+
 }
 
