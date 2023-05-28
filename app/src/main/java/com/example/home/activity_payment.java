@@ -2,6 +2,7 @@ package com.example.home;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -39,7 +40,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
 
     private CountDownTimer timer;
     ImageView movieImage, back_btn;
-    TextView payment_txt, service_fees, total_seats, movie_name, movie_genre, movie_location, movie_dateTime, Timer;
+    TextView paymentTxt, service_fees, total_seats, movie_name, movie_genre, movie_location, movie_dateTime,NoOfTicketsTV,Timer;
     String getUsername, getEmail, getPhone, getUserId;
     int total;
     ArrayList<String> seatList;
@@ -55,17 +56,36 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         movie_location = findViewById(R.id.movielocation);
         movie_dateTime = findViewById(R.id.moviedateTime);
         total_seats = findViewById(R.id.seats);
-        payment_txt = findViewById(R.id.paymentamt);
+        paymentTxt = findViewById(R.id.PaymentAmount);
         service_fees = findViewById(R.id.servicefees);
         book_now = findViewById(R.id.btnbooknow);
         Timer = findViewById(R.id.timer);
+        NoOfTicketsTV = findViewById(R.id.ticket2);
         back_btn = findViewById(R.id.backbtn);
 
         //These Code is for getting selected seats from seat Page
-        seatList = (ArrayList<String>) getIntent().getSerializableExtra("seatNo");
-        total_seats.setText(String.join(", ", seatList));
-        //------------------------------------------------------
+       // seatList = (ArrayList<String>) getIntent().getSerializableExtra("seatNo");
+        Intent intent = getIntent();
+        String SeatNumbers = intent.getStringExtra("SeatNumbers");
+        total_seats.setText(SeatNumbers);
 
+        SharedPreferences getSharedData = this.getSharedPreferences("SeatInfo", Context.MODE_PRIVATE);
+        String numberOfTickets= getSharedData.getString("noOfTickets", "Data Not Found");
+        NoOfTicketsTV.setText(numberOfTickets +" Ticket");
+        String myAmount= getSharedData.getString("Amount", "Data Not Found");
+        myAmount=myAmount.replace("₹","");
+        paymentTxt.setText(myAmount);
+        SharedPreferences getmovieData = this.getSharedPreferences("moviedetails", Context.MODE_PRIVATE);
+        String MovieName=getmovieData.getString("moviename","Data Not Found");
+        String MovieImage=getmovieData.getString("movieimg","Data Not Found");
+        movie_name.setText(MovieName);
+        String theaterName= getSharedData.getString("TheaterName", "Data Not Found");
+        movie_location.setText(theaterName);
+        String myDate= getSharedData.getString("date", "Data Not Found");
+        String ShowTime= getSharedData.getString("ShowTime", "Data Not Found");
+        movie_dateTime.setText(myDate+" "+ShowTime);
+
+        //------------------------------------------------------
         timer = new CountDownTimer(600000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -109,13 +129,13 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         getPhone = getSharedData.getString("Phone", "Data Not Found");
     }
     private void calculatePayment() {
-        int amt = Integer.parseInt(payment_txt.getText().toString().trim());
+        int amt = Integer.parseInt(paymentTxt.getText().toString().trim());
         total = amt + 18;
         String serviceFees = "₹18.00";
         String totalPayment = "Book Now | ₹" + total + ".00";
         String PaymentTxt = "₹" + total + ".00";
         service_fees.setText(serviceFees);
-        payment_txt.setText(PaymentTxt);
+        paymentTxt.setText(PaymentTxt);
         book_now.setText(totalPayment);
     }
     private void makePayment() {

@@ -220,7 +220,7 @@
                             android:textSize="15sp" />
 
                         <TextView
-                            android:id="@+id/paymentamt"
+                            android:id="@+id/PaymentAmount"
                             style="@style/textDefaultFont"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
