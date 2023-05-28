@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -55,6 +56,7 @@ import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 public class TheatreListFragment extends BottomSheetDialogFragment {
 
     private static final String TAG = "TheatreListFragment";
+    ProgressBar progressBar;
     ArrayList<CalendarRecycler> calendarList =new ArrayList<>();
     ArrayList<TheatreRecycler> theatreList = new ArrayList<>();
 
@@ -67,6 +69,8 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_theatre_list, container, false);
+
+        progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
 
         calendarRecycler = (RecyclerView)view.findViewById(R.id.calendarRecycler);
         calendarRecycler.setLayoutManager(new LinearLayoutManager(view.getContext(), RecyclerView.HORIZONTAL, false));
@@ -153,6 +157,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
                             } catch (JSONException e) {
                                 throw new RuntimeException(e);
                             }
+                            progressBar.setVisibility(View.GONE);
                         }
                     },
                     new Response.ErrorListener() {

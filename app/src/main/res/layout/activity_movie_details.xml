@@ -58,15 +58,14 @@
                         android:id="@+id/movieimg"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="MovieImage"
-
-                        android:scaleType="fitXY" />
+                        android:contentDescription="@string/movieimage"
+                        android:scaleType="centerCrop" />
 
                     <ImageView
                         android:id="@+id/movieimgshadow"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_260sdp"
-                        android:contentDescription="shadow"
+                        android:contentDescription="@string/imgshadow"
                         android:scaleType="centerCrop"
                         android:src="@drawable/image_shadow" />
 
@@ -175,7 +174,7 @@
                                 android:layout_width="@dimen/_20sdp"
                                 android:layout_height="@dimen/_20sdp"
                                 android:clickable="true"
-                                android:contentDescription="trailer"
+                                android:contentDescription="@string/trailerbtn"
                                 android:focusable="true"
                                 android:src="@drawable/play"
                                 android:textAlignment="center" />
@@ -218,14 +217,14 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ratings"
+                                android:text="@string/ratings"
                                 android:textColor="#9C9C9C"
                                 android:textSize="@dimen/_11ssp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="7.8/10"
+                                android:text="@string/_7_8_10"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_12ssp" />
                         </LinearLayout>
@@ -274,7 +273,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textAlignment="viewStart"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14ssp" />
@@ -317,7 +316,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
-                            android:text="29 February 2000"
+                            android:text="29 February 2001"
                             android:textAlignment="viewStart"
                             android:textColor="#FFD7D7D7"
                             android:textSize="@dimen/_12ssp" />

@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "757588440294",
-    "project_id": "movietime-a77cd",
-    "storage_bucket": "movietime-a77cd.appspot.com"
+    "project_number": "585122104015",
+    "project_id": "movietime-40e5c",
+    "storage_bucket": "movietime-40e5c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:757588440294:android:8f34ac4ee2db8035a0f727",
+        "mobilesdk_app_id": "1:585122104015:android:6c0b2e99ef36ac7b7aedba",
         "android_client_info": {
           "package_name": "com.example.home"
         }
       },
       "oauth_client": [
         {
-          "client_id": "757588440294-cidostg656jk9q8r2mtbuunt0tpmm9um.apps.googleusercontent.com",
+          "client_id": "585122104015-a5b57ritk7it2p6t0m7thlppaua6nuks.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.home",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "757588440294-ke579cts9pbps0hukeuvqas5eohj5975.apps.googleusercontent.com",
+          "client_id": "585122104015-9gub6vdalqbfrkqu3l0bjiijbp8p5i5o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAJ-LRskiHLgL0QBQ4FBQURkXEhqdf31oc"
+          "current_key": "AIzaSyCumH5jZAt2oOrPmylgypVeyMQYru0_M6Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "757588440294-63id79js16kci8r8gfp75ci1a5vqoa12.apps.googleusercontent.com",
+              "client_id": "585122104015-0pgdq3b5sgapei4sm6md3ohb5m1csoi3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

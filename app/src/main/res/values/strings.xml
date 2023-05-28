@@ -147,4 +147,10 @@
     <string name="_2498759427_string">2498759427</string>
     <string name="order_id_string">Order ID</string>
     <string name="cost_string">Cost</string>
+    <string name="movieimage">MovieImage</string>
+    <string name="imgshadow">shadow</string>
+    <string name="trailerbtn">trailer</string>
+    <string name="ratings">ratings</string>
+    <string name="_7_8_10">7.8/10</string>
+    <string name="description">Description</string>
 </resources>
