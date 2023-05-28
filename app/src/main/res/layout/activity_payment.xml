@@ -4,436 +4,422 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_payment"
-    android:background="@color/bg_dark">
+    android:background="@color/bg_dark"
+    tools:context=".MainActivity2">
 
     <RelativeLayout
-        android:id="@+id/contentcontainer"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="?android:attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-        <RelativeLayout
-            android:id="@+id/group4"
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="30dp"
-            android:gravity="center">
+            android:layout_marginBottom="0dp"
+            android:contentDescription="scroll">
 
-            <Button
-                android:id="@+id/btnbooknow"
-                android:layout_width="350dp"
-                android:layout_height="48dp"
-                android:background="@drawable/rectangle_facebook_google"
-                android:text="@string/book_now_string"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/rectangle_3_color" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/group1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="280dp"
-            android:gravity="center">
-
-
-            <RelativeLayout
-                android:id="@+id/frame3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="40dp">
-
-                <TextView
-                    android:id="@+id/ticket2"
-                    style="@style/textDefaultFont"
-                    android:layout_width="96.5dp"
-                    android:layout_height="26.5dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/_2_ticket_string"
-                    android:textColor="@color/_2_ticket_color"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/seats"
-                    style="@style/textDefaultFont"
-                    android:layout_width="97.5dp"
-                    android:layout_height="26.5dp"
-                    android:layout_marginStart="253dp"
-                    android:layout_marginTop="1dp"
-                    android:gravity="right"
-                    android:text="@string/d5__d6__d7_string"
-                    android:textColor="@color/bg_light"
-                    android:textSize="15sp" />
-
-                <View
-                    android:id="@+id/line1"
-                    android:layout_width="350dp"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/line_1_shape" />
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="152dp">
-
-                <TextView
-                    android:id="@+id/servicefee"
-                    style="@style/textDefaultFont"
-                    android:layout_width="120.5dp"
-                    android:layout_height="26.5dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/service_fee_string"
-                    android:textColor="@color/_2_ticket_color"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/servicefees"
-                    style="@style/textDefaultFont"
-                    android:layout_width="87.5dp"
-                    android:layout_height="26.5dp"
-                    android:layout_marginStart="263dp"
-                    android:layout_marginTop="1dp"
-                    android:gravity="end"
-                    android:text="18"
-                    android:textColor="@color/bg_light"
-                    android:textSize="15sp" />
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/frame5ek1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="96dp">
-
-                <TextView
-                    android:id="@+id/regularseat"
-                    style="@style/textDefaultFont"
-                    android:layout_width="141.5dp"
-                    android:layout_height="26.5dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/regular_seat_string"
-                    android:textColor="@color/_2_ticket_color"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/paymentamt"
-                    style="@style/textDefaultFont"
-                    android:layout_width="96dp"
-                    android:layout_height="26dp"
-                    android:layout_marginStart="253dp"
-                    android:layout_marginTop="1dp"
-                    android:gravity="right"
-                    android:text="400"
-                    android:textColor="@color/bg_light"
-                    android:textSize="14sp" />
-
-                <View
-                    android:id="@+id/line3"
-                    android:layout_width="350dp"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="41dp"
-                    android:background="@drawable/line_1_shape" />
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/frame6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp">
-
-                <TextView
-                    android:id="@+id/orderNumberText"
-                    style="@style/textDefaultFont"
-                    android:layout_width="136dp"
-                    android:layout_height="24dp"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/order_number___string"
-                    android:textColor="@color/_2_ticket_color"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/OrderNumber"
-                    style="@style/textDefaultFont"
-                    android:layout_width="136dp"
-                    android:layout_height="24dp"
-                    android:layout_marginLeft="112dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/_3747234084598_string"
-                    android:textColor="@color/bg_light"
-                    android:textSize="12sp" />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/group3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:gravity="center"
-            android:layout_marginTop="500dp">
-
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginTop="160dp"
-                android:gravity="center"
-                android:background="@drawable/payment_dim_shape">
-
-                <TextView
-                    android:id="@+id/completeYourPaymentIn"
-                    style="@style/textDefaultFont"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/complete_your_payment_in_string"
-                    android:textColor="@color/bg_light"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/timer"
-                    style="@style/textDefaultFont"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="280dp"
-                    android:layout_marginEnd="20dp"
-                    android:text=""
-                    android:textColor="@color/bg_light"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/frame4"
-                android:layout_width="wrap_content"
-                android:layout_height="77dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="53dp"
-                android:gravity="center"
-                android:background="@drawable/rectangle_grey_input" >
-
-                <TextView
-                    android:id="@+id/MasterCardNumer"
-                    style="@style/textDefaultFont"
-                    android:layout_width="160dp"
-                    android:layout_height="26dp"
-                    android:layout_marginLeft="69dp"
-                    android:layout_marginTop="28dp"
-                    android:text="@string/___________0783_7873_string"
-                    android:textColor="@color/_2_ticket_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/mastercard"
-                    style="@style/textDefaultFont"
-                    android:layout_width="118dp"
-                    android:layout_height="27dp"
-                    android:layout_marginLeft="69dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/mastercard_string"
-                    android:textColor="@color/bg_light"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="16dp"
-                    android:layout_marginStart="320dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="17dp"
-                    android:src="@drawable/vector_right" />
-
-                <ImageView
-                    android:id="@+id/mastercardImage"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:contentDescription="mastercard_4_2"
-                    android:src="@drawable/mastercard_4_2" />
-
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/paymentmethod"
-                style="@style/textDefaultFont"
-                android:layout_width="177dp"
-                android:layout_height="36dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="0dp"
-                android:text="@string/payment_method_string"
-                android:textColor="@color/bg_light"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/group2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <RelativeLayout
-                android:id="@+id/frame1"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <View
-                    android:id="@+id/rectangle3ek1"
-                    android:layout_width="match_parent"
-                    android:layout_height="252dp"
-                    android:background="@drawable/rectangle_3_ek1_shape" />
+                android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="30dp"
-                    android:gravity="center">
+                    android:layout_height="@dimen/_200sdp"
+                    android:background="@drawable/rectangle_3_ek1_shape">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/backbtn"
-                        android:layout_width="12dp"
-                        android:layout_height="20dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/vector" />
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/round_grey"
+                        android:clickable="true"
+                        android:contentDescription="backButton"
+                        android:focusable="true"
+                        android:padding="@dimen/_8sdp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/arrow_back"
+                        android:textAlignment="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_60sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/movieimage"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_120sdp"
+                                android:contentDescription="TODO"
+                                android:src="@drawable/spider_man_no_way_home_1" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/moviename"
+                                    style="@style/textDefaultFont"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:text="@string/spider_man_no_way_home_string"
+                                    android:textColor="@color/rectangle_3_color"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/moviegenre"
+                                    style="@style/textDefaultFont"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="@string/adventure_string"
+                                    android:textColor="@color/_2_ticket_color"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/movielocation"
+                                    style="@style/textDefaultFont"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:text="@string/orion_mall_panvel_string"
+                                    android:textColor="@color/bg_light"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/moviedateTime"
+                                    style="@style/textDefaultFont"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:text="@string/friday__21_apr_2023__16_00_string"
+                                    android:textColor="@color/_2_ticket_color"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/orderNumberText"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_number___string"
+                            android:textColor="@color/_2_ticket_color"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <TextView
+                            android:id="@+id/OrderNumber"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:text="@string/_3747234084598_string"
+                            android:textColor="@color/bg_light"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/frame3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/ticket2"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/_2_ticket_string"
+                            android:textColor="@color/_2_ticket_color"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/seats"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/d5__d6__d7_string"
+                            android:textColor="@color/bg_light"
+                            android:textSize="15sp" />
+
+                        <View
+                            android:id="@+id/line1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:background="@drawable/line_1_shape" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/frame5ek1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/regularseat"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/regular_seat_string"
+                            android:textColor="@color/_2_ticket_color"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/paymentamt"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="400"
+                            android:textColor="@color/bg_light"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:id="@+id/line3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:background="@drawable/line_1_shape" />
+
+                    </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center">
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp">
 
                         <TextView
-                            android:id="@+id/ordersummary"
-                            android:layout_width="179dp"
-                            android:layout_height="38dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="0dp"
-                            android:gravity="center"
-                            android:text="@string/order_summary_string"
+                            android:id="@+id/servicefee"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/service_fee_string"
+                            android:textColor="@color/_2_ticket_color"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/servicefees"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="18"
                             android:textColor="@color/bg_light"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                     </RelativeLayout>
 
-                </RelativeLayout>
+                </LinearLayout>
 
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/frame2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="110dp">
-
-                <ImageView
-                    android:id="@+id/movieimage"
-                    android:layout_width="80dp"
-                    android:layout_height="120dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="0dp"
-                    android:src="@drawable/spider_man_no_way_home_1" />
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="130dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp">
 
                     <TextView
-                        android:id="@+id/movielocation"
+                        android:id="@+id/paymentmethod"
                         style="@style/textDefaultFont"
-                        android:layout_width="142dp"
-                        android:layout_height="26dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="65dp"
-                        android:text="@string/orion_mall_panvel_string"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/payment_method_string"
+                        android:textColor="@color/bg_light"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/rectangle_grey_input"
+                    android:columnCount="3"
+                    android:rowCount="1">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/mastercardImage"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:contentDescription="mastercard_4_2"
+                            android:src="@drawable/mastercard_4_2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_170sdp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/mastercard"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mastercard_string"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/bg_light"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/MasterCardNumer"
+                            style="@style/textDefaultFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/___________0783_7873_string"
+                            android:textColor="@color/_2_ticket_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentEnd="true"
+
+                            android:src="@drawable/vector_right" />
+                    </RelativeLayout>
+
+                </GridLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@drawable/payment_dim_shape"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/completeYourPaymentIn"
+                        style="@style/textDefaultFont"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="@string/complete_your_payment_in_string"
                         android:textColor="@color/bg_light"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/moviename"
+                        android:id="@+id/timer"
                         style="@style/textDefaultFont"
-                        android:layout_width="229dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:text="@string/spider_man_no_way_home_string"
-                        android:textColor="@color/rectangle_3_color"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/moviegenre"
-                        style="@style/textDefaultFont"
-                        android:layout_width="78dp"
-                        android:layout_height="23dp"
-                        android:layout_gravity="center_horizontal|center"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="36dp"
-                        android:text="@string/adventure_string"
-                        android:textColor="@color/_2_ticket_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/moviedateTime"
-                        style="@style/textDefaultFont"
-                        android:layout_width="165dp"
-                        android:layout_height="23dp"
-                        android:layout_gravity="center_horizontal|center"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="95dp"
-                        android:text="@string/friday__21_apr_2023__16_00_string"
-                        android:textColor="@color/_2_ticket_color"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:text="10.00"
+                        android:textColor="@color/bg_light"
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
-            </RelativeLayout>
 
-        </RelativeLayout>
 
+            </LinearLayout>
+
+        </ScrollView>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/ButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnbooknow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rectangle_facebook_google"
+            android:text="@string/book_now_string"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/rectangle_3_color" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
