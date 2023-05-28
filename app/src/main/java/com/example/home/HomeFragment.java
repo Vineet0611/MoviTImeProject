@@ -46,8 +46,6 @@ public class HomeFragment extends Fragment {
     private static final String url3 = "https://inundated-lenders.000webhostapp.com/api/recycler3.php";
     private static final String url4 = "https://inundated-lenders.000webhostapp.com/api/recycler4.php";
 
-
-    TextView viewAll1;
     ImageSlider imageSlider;
     RecyclerView recyclerView1, recyclerView2, recyclerView3, recyclerView4;
     ArrayList<FirstRecycler> arrFirst =new ArrayList<>();
@@ -65,14 +63,6 @@ public class HomeFragment extends Fragment {
         imageSlider = (ImageSlider)view.findViewById(R.id.slider);
 
 
-        viewAll1 = (TextView)view.findViewById(R.id.Bollyviewalltxt);
-        viewAll1.setOnClickListener(new View.OnClickListener() {    //temp code
-            @Override
-            public void onClick(View v) {
-                TheatreListFragment theatreListFragment = new TheatreListFragment();
-                theatreListFragment.show(getActivity().getSupportFragmentManager(), theatreListFragment.getTag());
-            }
-        });
 
         ArrayList<SlideModel> slideModels = new ArrayList<>();
 

@@ -125,6 +125,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             prefEditor.putString("movieId",movie_id);
                             prefEditor.apply();
 
+                            SharedPreferences prefMdetails = getSharedPreferences("moviedetails", MODE_PRIVATE);
+                            SharedPreferences.Editor peditor = prefMdetails.edit();
+                            peditor.putString("moviename", movie_name);
+                            peditor.putString("movieimg", movie_img);
+                            peditor.putString("movieduration", movie_duration);
+                            peditor.apply();
+
                             castDetails();
 
                             moviegenre.setText(movie_genre);

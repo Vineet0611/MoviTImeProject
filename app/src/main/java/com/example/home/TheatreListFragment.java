@@ -2,6 +2,8 @@ package com.example.home;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static com.facebook.FacebookSdk.getApplicationContext;
+
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Movie;
@@ -57,7 +59,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
 
     private static final String url = "https://inundated-lenders.000webhostapp.com/api/theatre.php";
     RecyclerView calendarRecycler, theatreRecycler;
-    String movie_id, city;
+    String mid, c, d;
 
 
     @Override
@@ -71,9 +73,9 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
         theatreRecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         SharedPreferences prefMovieId = getActivity().getSharedPreferences("movieId", MODE_PRIVATE);
-        movie_id = prefMovieId.getString("movieId", "0");
+        mid = prefMovieId.getString("movieId", "0");
         SharedPreferences prefCity = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-        city = prefCity.getString("city", "Select City");
+        c = prefCity.getString("city", "Select City");
 
         return view;
     }
@@ -82,8 +84,11 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        LocalDate localDate = LocalDate.now();
+        d = localDate.toString();
+
         setCalendarRecycler();
-        setTheatreList();
+        setTheatreList(d, c, mid);
 
 
     }
@@ -112,18 +117,17 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
 
         }
 
-        public void setTheatreList(){
-            LocalDate localDate = LocalDate.now();
-            String d = localDate.toString();
+
+        public void setTheatreList(String date, String city, String movie_id){
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
-                                if (!Objects.equals(response, "no record found")){
-                                JSONArray tList = new JSONArray(response);
-                                for(int i=0; i<tList.length(); i++){
+                                if (response != "no record found"){
+                                    JSONArray tList = new JSONArray(response);
+                                    for(int i=0; i<tList.length(); i++){
                                     JSONObject theatreListObjects = tList.getJSONObject(i);
                                     String tId = theatreListObjects.getString("theatre_id");
                                     String tName = theatreListObjects.getString("theatre_name");
@@ -135,14 +139,14 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
 
                                     TheatreRecycler tRecycler = new TheatreRecycler(tName, language, screen, showid, time, tId, date);
                                     theatreList.add(tRecycler);
-                                }
-                                Log.d("theatre","arrtheatreData"+ theatreList);
+                                    }
+                                    Log.d("theatre","arrtheatreData"+ theatreList);
 
-                                TheatreListRecyclerAdapter fadapter = new TheatreListRecyclerAdapter(getActivity() , theatreList);
-                                theatreRecycler.setAdapter(fadapter);
-                                Log.d("theatre", "Theatre set adapter");
+                                    TheatreListRecyclerAdapter fadapter = new TheatreListRecyclerAdapter(getApplicationContext() , theatreList);
+                                    theatreRecycler.setAdapter(fadapter);
+                                    Log.d("theatre", "Theatre set adapter");
                                 }else{
-                                    Toast.makeText(requireActivity(), response, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                                 }
 
                             } catch (JSONException e) {
@@ -153,7 +157,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getActivity(), "" + error.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "" + error.getMessage(), Toast.LENGTH_LONG).show();
                             Log.e("theatre", "theatre LogE " + error.getMessage());
 
                         }
@@ -165,7 +169,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
                     Map<String,String> params = new HashMap<>();
                     params.put("movieid", movie_id);
                     params.put("city", city);
-                    params.put("date", d);
+                    params.put("date", date);
                     return params;
                 }
             };
@@ -175,7 +179,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
                     DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                     DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-            Volley.newRequestQueue(requireActivity()).add(stringRequest);
+            Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
             Log.d("movie", "theatre queued success: ");
         }
 }
