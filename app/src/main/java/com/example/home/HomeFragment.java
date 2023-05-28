@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,7 @@ public class HomeFragment extends Fragment {
     private static final String url4 = "https://inundated-lenders.000webhostapp.com/api/recycler4.php";
 
 
-
+    TextView viewAll1;
     ImageSlider imageSlider;
     RecyclerView recyclerView1, recyclerView2, recyclerView3, recyclerView4;
     ArrayList<FirstRecycler> arrFirst =new ArrayList<>();
@@ -56,10 +57,6 @@ public class HomeFragment extends Fragment {
 
 
 
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,7 +65,14 @@ public class HomeFragment extends Fragment {
         imageSlider = (ImageSlider)view.findViewById(R.id.slider);
 
 
-
+        viewAll1 = (TextView)view.findViewById(R.id.Bollyviewalltxt);
+        viewAll1.setOnClickListener(new View.OnClickListener() {    //temp code
+            @Override
+            public void onClick(View v) {
+                TheatreListFragment theatreListFragment = new TheatreListFragment();
+                theatreListFragment.show(getActivity().getSupportFragmentManager(), theatreListFragment.getTag());
+            }
+        });
 
         ArrayList<SlideModel> slideModels = new ArrayList<>();
 
