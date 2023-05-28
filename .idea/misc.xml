@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -18,7 +19,14 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/selected_seat_style.xml" value="0.1" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/warning_img.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/arrow_back.xml" value="0.106" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/custom_button_for_five_ticket.xml" value="0.126" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/custom_button_for_four_ticket.xml" value="0.126" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/custom_button_for_one_ticket.xml" value="0.1155" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/custom_button_for_three_ticket.xml" value="0.126" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/custom_button_for_two_ticket.xml" value="0.126" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1015" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/next_button_for_selecte_seat_page.xml" value="0.1155" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/select_noof_seat_background.xml" value="0.1075" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/user_details.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/user_details_background.xml" value="0.15" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/user_details_page_options_background.xml" value="0.1" />
@@ -30,8 +38,10 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_login.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_main.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_movie_details.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_payment.xml" value="0.22" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_print_ticket.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_selecte_seat.xml" value="0.5" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_signup.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_user_account_details.xml" value="0.2" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_user_dashboard.xml" value="0.15104166666666666" />
@@ -45,11 +55,12 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/item_template_for_userdashborad.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/location_selector.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/movieposter_layout.xml" value="0.18" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/number_of_ticket_dialog_layout.xml" value="0.22" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/menu/toolbar_menu.xml" value="0.15104166666666666" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

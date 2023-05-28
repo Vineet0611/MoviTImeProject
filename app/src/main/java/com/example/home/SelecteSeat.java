@@ -1,13 +1,20 @@
 package com.example.home;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialog;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -32,9 +39,10 @@ import java.util.Map;
 
 
 
-public class SelecteSeat extends AppCompatActivity {
+public class SelecteSeat extends AppCompatActivity{
     private ActivitySelecteSeatBinding binding;
     private int NoOfTickets;
+    TextView txt;
     int noOfSeatsSelected=0;
     String SeatNos="";
     String TotalAmount="0";
@@ -58,8 +66,11 @@ public class SelecteSeat extends AppCompatActivity {
         binding=ActivitySelecteSeatBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-        NoOfTickets=3;
 
+        showCustomDialog();
+        txt=binding.NoOfTicketsText;
+        String noOfTickets=Integer.toString(NoOfTickets);
+        binding.NoOfTicketsText.setText(noOfTickets);
         GetSeatNoRequest();
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,6 +232,75 @@ public class SelecteSeat extends AppCompatActivity {
         binding.K10.setOnCheckedChangeListener(new myOnCheckChangeEvent());
         binding.K11.setOnCheckedChangeListener(new myOnCheckChangeEvent());
         binding.K12.setOnCheckedChangeListener(new myOnCheckChangeEvent());
+
+
+    }
+
+    private void showCustomDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(SelecteSeat.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.number_of_ticket_dialog_layout, null);
+        builder.setView(dialogView);
+
+
+        Button button1 = dialogView.findViewById(R.id.button1);
+        Button button2 = dialogView.findViewById(R.id.button2);
+        Button button3 = dialogView.findViewById(R.id.button3);
+        Button button4 = dialogView.findViewById(R.id.button4);
+        Button button5 = dialogView.findViewById(R.id.button5);
+
+        AlertDialog dialog = builder.create();
+        dialog.setCancelable(false);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SelecteSeat.this, "Button 1 clicked", Toast.LENGTH_SHORT).show();
+                NoOfTickets=1;
+                txt.setText("1");
+                dialog.dismiss();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SelecteSeat.this, "Button 2 clicked", Toast.LENGTH_SHORT).show();
+                NoOfTickets=2;
+                txt.setText("2");
+                dialog.dismiss();
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SelecteSeat.this, "Button 3 clicked", Toast.LENGTH_SHORT).show();
+                NoOfTickets=3;
+                txt.setText("3");
+                dialog.dismiss();
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SelecteSeat.this, "Button 4 clicked", Toast.LENGTH_SHORT).show();
+                NoOfTickets=4;
+                txt.setText("4");
+                dialog.dismiss();
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SelecteSeat.this, "Button 5 clicked", Toast.LENGTH_SHORT).show();
+                NoOfTickets=5;
+                txt.setText("5");
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+
     }
     class myOnCheckChangeEvent implements CompoundButton.OnCheckedChangeListener{
         @Override

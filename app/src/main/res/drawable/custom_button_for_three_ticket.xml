@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval" >
+            <solid android:color="#D90429"/>
+            <corners
+                android:topLeftRadius="20dp"
+                android:topRightRadius="20dp"
+                />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/circle3"/>
+</layer-list>

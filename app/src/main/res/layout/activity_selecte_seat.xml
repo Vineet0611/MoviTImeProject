@@ -30,6 +30,7 @@
             android:textSize="15sp"
             />
         <TextView
+            android:id="@+id/MovieNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Akhanda"
@@ -61,6 +62,7 @@
             android:textSize="15sp"
             />
         <TextView
+            android:id="@+id/TheaterNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rhythm Cinemas"
@@ -92,6 +94,7 @@
             android:textSize="15sp"
             />
         <TextView
+            android:id="@+id/ShowTimeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8:00"
@@ -123,9 +126,9 @@
             android:textSize="15sp"
             />
         <TextView
+            android:id="@+id/NoOfTicketsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:layout_marginStart="3dp"
