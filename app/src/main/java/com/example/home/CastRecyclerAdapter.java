@@ -54,9 +54,9 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapte
             holder.castimg.setBackgroundResource(R.drawable.no_user_img);
         }
         holder.castname.setText(arrCast.get(position).cName);
-        Log.d("volleyholder ", "Cast name success: ");
+        Log.d("volleyholder ", "Cast name success: "+arrCast.get(position).cName);
         holder.castrole.setText(arrCast.get(position).cRole);
-        Log.d("volleyholder ", "Cast role success: ");
+        Log.d("volleyholder ", "Cast role success: "+arrCast.get(position).cRole);
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

@@ -3571,15 +3571,14 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:backgroundTint="#3F51B5"
-        android:text="@string/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/next_button_for_selecte_seat_page"
         app:iconTint="#673AB7"
+        android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LinLaySeatTotalAmount" />
 
 
