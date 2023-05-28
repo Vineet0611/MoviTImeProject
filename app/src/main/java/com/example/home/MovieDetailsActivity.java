@@ -22,6 +22,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +50,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "MovieDetailsActivity";
     private long lastClick = 0;
+    ProgressBar progressBar;
+    RelativeLayout rl;
     Button bookbtn;
     TextView moviename, moviegenre, movieabout, movielanguage, moviequality, movieduration, moviereleased;
     ImageView movietrailer, movieimg;
@@ -63,6 +67,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
+        progressBar = findViewById(R.id.progress_bar);
+        rl = findViewById(R.id.progress_bar_layout);
         bookbtn = findViewById(R.id.bookButton);
         moviename = findViewById(R.id.moviename);
         moviegenre = findViewById(R.id.moviegenre);
@@ -151,6 +157,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+                        progressBar.setVisibility(View.GONE);
+                        rl.setVisibility(View.GONE);
                     }
                 },
                 new Response.ErrorListener() {

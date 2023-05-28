@@ -16,6 +16,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +43,8 @@ import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
+    ProgressBar progressBar;
+    RelativeLayout rl;
     private static final String url1 = "https://inundated-lenders.000webhostapp.com/api/recycler1.php";
     private static final String url2 = "https://inundated-lenders.000webhostapp.com/api/recycler2.php";
     private static final String url3 = "https://inundated-lenders.000webhostapp.com/api/recycler3.php";
@@ -61,7 +65,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         imageSlider = (ImageSlider)view.findViewById(R.id.slider);
-
+        progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
+        rl = (RelativeLayout)view.findViewById(R.id.progress_bar_layout);
 
 
         ArrayList<SlideModel> slideModels = new ArrayList<>();
@@ -108,6 +113,7 @@ public class HomeFragment extends Fragment {
             loadSecondRec();
             loadThirdRec();
             loadFourthRec();
+
         }else{
             Toast.makeText(getActivity(), "Check Internet Connection", Toast.LENGTH_LONG).show();
         }
@@ -272,6 +278,8 @@ public class HomeFragment extends Fragment {
                             FourthRecyclerAdapter fadapter = new FourthRecyclerAdapter(getActivity(), arrFourth);
                             recyclerView4.setAdapter(fadapter);
                             Log.d("volley ", "Fourth set adapter ");
+                            progressBar.setVisibility(View.GONE);
+                            rl.setVisibility(View.GONE);
 
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
