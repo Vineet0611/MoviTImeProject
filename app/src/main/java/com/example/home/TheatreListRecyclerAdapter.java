@@ -63,6 +63,7 @@ public class TheatreListRecyclerAdapter extends RecyclerView.Adapter<TheatreList
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, SelecteSeat.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //-> Added this line to solve the theater list adapter bug
                 intent.putExtra("theatre_name", theatreList.get(holder.getLayoutPosition()).tName);
                 intent.putExtra("show_language", theatreList.get(holder.getLayoutPosition()).language);
                 intent.putExtra("screen_type", theatreList.get(holder.getLayoutPosition()).screen);
