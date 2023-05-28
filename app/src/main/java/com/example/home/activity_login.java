@@ -118,9 +118,9 @@ public class activity_login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);  //<-- Temp Code
                 startActivity(intent);
                 finish();
-//                if (validation()) {    <-- Temporary commenting this code for testing...
-//                    checkLoginCredentials();
-//                }
+                if (validation()) {    //<-- Temporary commenting this code for testing...
+                    checkLoginCredentials();
+                }
             }
         });
 
