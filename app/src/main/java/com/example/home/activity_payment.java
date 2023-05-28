@@ -29,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,6 +69,13 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         Intent intent = getIntent();
         String SeatNumbers = intent.getStringExtra("SeatNumbers");
         total_seats.setText(SeatNumbers);
+        seatList=new ArrayList<>();
+        if(SeatNumbers.contains("/")){
+            String arrySeatList[]=SeatNumbers.split("/");
+            Collections.addAll(seatList,arrySeatList);
+        }else{
+            seatList.add(SeatNumbers);
+        }
 
         SharedPreferences getSharedData = this.getSharedPreferences("SeatInfo", Context.MODE_PRIVATE);
         String numberOfTickets= getSharedData.getString("noOfTickets", "Data Not Found");

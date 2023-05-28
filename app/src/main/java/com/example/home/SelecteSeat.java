@@ -51,6 +51,7 @@ public class SelecteSeat extends AppCompatActivity{
     String TheaterName="";
     String ShowTime="";
     String date="";
+    String ShowId="";
     List<String> AllSeatIdsGlobal=new ArrayList<String>(Arrays.asList(
             "A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12"
             ,"B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12",
@@ -75,6 +76,7 @@ public class SelecteSeat extends AppCompatActivity{
         TheaterName = intent.getStringExtra("theatre_name");
         ShowTime = intent.getStringExtra("show_time");
         date = intent.getStringExtra("date");
+        ShowId= intent.getStringExtra("show_id");
         SharedPreferences getmovieData = this.getSharedPreferences("moviedetails", Context.MODE_PRIVATE);
         String MovieName=getmovieData.getString("moviename","Data Not Found");
         binding.MovieNameText.setText(MovieName);
@@ -84,7 +86,7 @@ public class SelecteSeat extends AppCompatActivity{
         txt=binding.NoOfTicketsText;
         String noOfTickets=Integer.toString(NoOfTickets);
         binding.NoOfTicketsText.setText(noOfTickets);
-        GetSeatNoRequest();
+        GetSeatNoRequest(ShowId);
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -404,11 +406,11 @@ public class SelecteSeat extends AppCompatActivity{
             Toast.makeText(this, "Error : "+ex+" "+i, Toast.LENGTH_LONG).show();
         }
     }
-    public void GetSeatNoRequest(){
+    public void GetSeatNoRequest(String ShowId){
 
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="https://inundated-lenders.000webhostapp.com/Admin/php/GetBookedSeatsApiForAndroid.php?id=1";
+        String url ="https://inundated-lenders.000webhostapp.com/Admin/php/GetBookedSeatsApiForAndroid.php?id="+ShowId;
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

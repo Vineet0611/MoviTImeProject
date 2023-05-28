@@ -82,16 +82,16 @@ public class SearchFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_search, container, false);
-        btn =(Button)rootView.findViewById(R.id.showSeats) ;
-        TextView tx=(TextView)rootView.findViewById(R.id.Mytext);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(getActivity(), "hiii", Toast.LENGTH_SHORT).show();
-                Intent it =new Intent(getActivity(),SelecteSeat.class);
-                startActivity(it);
-            }
-        });
+       // btn =(Button)rootView.findViewById(R.id.showSeats) ;
+      //  TextView tx=(TextView)rootView.findViewById(R.id.Mytext);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //Toast.makeText(getActivity(), "hiii", Toast.LENGTH_SHORT).show();
+//                Intent it =new Intent(getActivity(),SelecteSeat.class);
+//                startActivity(it);
+//            }
+//        });
         queue = Volley.newRequestQueue(getActivity());
         StringRequest request = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
