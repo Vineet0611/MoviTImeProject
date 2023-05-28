@@ -1,7 +1,10 @@
 package com.example.home;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +27,7 @@ import java.util.Objects;
 
 public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdapter.ViewHolder> {
     Context context;
+    String location;
     ArrayList<ThirdRecycler> arrThird;
 
     ThirdRecyclerAdapter(Context context, ArrayList<ThirdRecycler>arrThird){
@@ -35,6 +40,8 @@ public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdap
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.movieposter_layout, parent, false);
+        SharedPreferences prefLocation = view.getContext().getSharedPreferences("location", MODE_PRIVATE);
+        location = prefLocation.getString("city", "Select City");
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -58,9 +65,13 @@ public class ThirdRecyclerAdapter extends RecyclerView.Adapter<ThirdRecyclerAdap
    holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, MovieDetailsActivity.class);
-                intent.putExtra("movie_name", arrThird.get(holder.getLayoutPosition()).mName);
-                context.startActivity(intent);
+                if(!Objects.equals(location, "Select City")){
+                    Intent intent = new Intent(context, MovieDetailsActivity.class);
+                    intent.putExtra("movie_name", arrThird.get(holder.getLayoutPosition()).mName);
+                    context.startActivity(intent);
+                }else{
+                    Toast.makeText(view.getContext(), "Please select a city", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

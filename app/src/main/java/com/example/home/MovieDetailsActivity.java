@@ -21,6 +21,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -55,6 +56,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
     Button bookbtn;
     TextView moviename, moviegenre, movieabout, movielanguage, moviequality, movieduration, moviereleased;
     ImageView movietrailer, movieimg;
+
+    ImageButton backButton;
     RecyclerView castRecycler;
     String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
     private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
@@ -69,6 +72,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progress_bar);
         rl = findViewById(R.id.progress_bar_layout);
+        backButton = findViewById(R.id.backButton);
         bookbtn = findViewById(R.id.bookButton);
         moviename = findViewById(R.id.moviename);
         moviegenre = findViewById(R.id.moviegenre);
@@ -104,6 +108,22 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 TheatreListFragment theatreListFragment = new TheatreListFragment();
                 theatreListFragment.show(getSupportFragmentManager(),theatreListFragment.getTag());
                 }
+        });
+
+        movietrailer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MovieDetailsActivity.this, WebViewActivity.class);
+                intent.putExtra("movie_trailer", movie_trailer);
+                startActivity(intent);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
 
 

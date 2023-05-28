@@ -23,6 +23,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"/>
 
+        <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="visible"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/theatreRecycler"
             android:layout_width="match_parent"
@@ -31,6 +38,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_200sdp"/>
+
 
 
 
