@@ -144,12 +144,13 @@ public class FacebookAuthActivity extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                     StyleableToast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();
                                     startActivity(intent);
-
+                                    finish();
                                     break;
                                 }
                                 case "facebook_signup": {
                                     Intent intent = new Intent(getApplicationContext(), activity_email_phone.class);
                                     startActivity(intent);
+                                    finish();
                                     break;
                                 }
                                 case "error": {
