@@ -20,6 +20,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRecycler"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/theatreRecycler"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <View

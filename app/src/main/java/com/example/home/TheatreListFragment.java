@@ -1,5 +1,8 @@
 package com.example.home;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Movie;
 import android.nfc.Tag;
@@ -20,8 +23,17 @@ import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
@@ -30,6 +42,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
@@ -39,7 +53,11 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
 
     private static final String TAG = "TheatreListFragment";
     ArrayList<CalendarRecycler> calendarList =new ArrayList<>();
-    RecyclerView calendarRecycler;
+    ArrayList<TheatreRecycler> theatreList = new ArrayList<>();
+
+    private static final String url = "https://inundated-lenders.000webhostapp.com/api/theatre.php";
+    RecyclerView calendarRecycler, theatreRecycler;
+    String movie_id, city;
 
 
     @Override
@@ -49,6 +67,13 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
 
         calendarRecycler = (RecyclerView)view.findViewById(R.id.calendarRecycler);
         calendarRecycler.setLayoutManager(new LinearLayoutManager(view.getContext(), RecyclerView.HORIZONTAL, false));
+        theatreRecycler = (RecyclerView)view.findViewById(R.id.theatreRecycler);
+        theatreRecycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        SharedPreferences prefMovieId = getActivity().getSharedPreferences("movieId", MODE_PRIVATE);
+        movie_id = prefMovieId.getString("movieId", "0");
+        SharedPreferences prefCity = getActivity().getSharedPreferences("location", MODE_PRIVATE);
+        city = prefCity.getString("city", "Select City");
 
         return view;
     }
@@ -58,6 +83,9 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         setCalendarRecycler();
+        setTheatreList();
+
+
     }
 
         public void setCalendarRecycler(){
@@ -82,5 +110,72 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
             calendarRecycler.setAdapter(fadapter);
             Log.d("calendar ", "set adapter ");
 
+        }
+
+        public void setTheatreList(){
+            LocalDate localDate = LocalDate.now();
+            String d = localDate.toString();
+
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                if (!Objects.equals(response, "no record found")){
+                                JSONArray tList = new JSONArray(response);
+                                for(int i=0; i<tList.length(); i++){
+                                    JSONObject theatreListObjects = tList.getJSONObject(i);
+                                    String tId = theatreListObjects.getString("theatre_id");
+                                    String tName = theatreListObjects.getString("theatre_name");
+                                    String language = theatreListObjects.getString("show_language");
+                                    String screen = theatreListObjects.getString("screen_type");
+                                    String date = theatreListObjects.getString("show_date");
+                                    String showid = theatreListObjects.getString("show_id");
+                                    String time = theatreListObjects.getString("show_time");
+
+                                    TheatreRecycler tRecycler = new TheatreRecycler(tName, language, screen, showid, time, tId, date);
+                                    theatreList.add(tRecycler);
+                                }
+                                Log.d("theatre","arrtheatreData"+ theatreList);
+
+                                TheatreListRecyclerAdapter fadapter = new TheatreListRecyclerAdapter(getActivity() , theatreList);
+                                theatreRecycler.setAdapter(fadapter);
+                                Log.d("theatre", "Theatre set adapter");
+                                }else{
+                                    Toast.makeText(requireActivity(), response, Toast.LENGTH_SHORT).show();
+                                }
+
+                            } catch (JSONException e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getActivity(), "" + error.getMessage(), Toast.LENGTH_LONG).show();
+                            Log.e("theatre", "theatre LogE " + error.getMessage());
+
+                        }
+
+                    }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<>();
+                    params.put("movieid", movie_id);
+                    params.put("city", city);
+                    params.put("date", d);
+                    return params;
+                }
+            };
+
+            stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    50000,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+            Volley.newRequestQueue(requireActivity()).add(stringRequest);
+            Log.d("movie", "theatre queued success: ");
         }
 }

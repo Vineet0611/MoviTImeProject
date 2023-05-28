@@ -1,8 +1,7 @@
 package com.example.home;
 
 public class CastRecycler {
-    String cImg;
-    String cName, cRole;
+    String cImg, cName, cRole;
 
     public CastRecycler(String img, String cName, String cRole){
         this.cImg = img;

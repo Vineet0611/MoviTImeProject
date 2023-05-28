@@ -1,6 +1,7 @@
 package com.example.home;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.android.volley.AuthFailureError;
@@ -47,7 +48,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "MovieDetailsActivity";
     private long lastClick = 0;
-    Boolean flag = false;
     Button bookbtn;
     TextView moviename, moviegenre, movieabout, movielanguage, moviequality, movieduration, moviereleased;
     ImageView movietrailer, movieimg;
@@ -74,7 +74,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         movietrailer = findViewById(R.id.trailerlogo);
         movieimg = findViewById(R.id.movieimg);
 
-        castRecycler=findViewById(R.id.castRecycler);
+        castRecycler=(RecyclerView)findViewById(R.id.castRecycler);
         castRecycler.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
 
 
@@ -82,17 +82,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
             movie_name = getIntent().getStringExtra("movie_name");
             moviename.setText(movie_name);
             getDetails();
-
         }
         else{
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
             finish();
         }
-
-//        if(flag){
-//            castDetails();
-//        }
-
 
         bookbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +99,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 theatreListFragment.show(getSupportFragmentManager(),theatreListFragment.getTag());
                 }
         });
+
 
     }
 
@@ -124,11 +119,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             movie_languages = list.getJSONObject(0).getString("movie_languages");
                             movie_quality = list.getJSONObject(0).getString("movie_quality");
                             movie_img = list.getJSONObject(0).getString("movie_image");
-//                            JSONObject myJsonObj = list.getJSONObject();
-//                            myJsonArray.put(myJsonObj);
-//                            Log.d("movie ", "myJsonObj created");
-//                            Log.d("movie ", "movie_genre done");
-//                            Toast.makeText(MovieDetailsActivity.this, response, Toast.LENGTH_LONG).show();
+
+                            SharedPreferences prefMovieId = getSharedPreferences("movieId", MODE_PRIVATE);
+                            SharedPreferences.Editor prefEditor = prefMovieId.edit();
+                            prefEditor.putString("movieId",movie_id);
+                            prefEditor.apply();
+
+                            castDetails();
+
                             moviegenre.setText(movie_genre);
                             movieabout.setText(movie_about);
                             movielanguage.setText(movie_languages);
@@ -147,7 +145,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             throw new RuntimeException(e);
                         }
                         Toast.makeText(MovieDetailsActivity.this, movie_id, Toast.LENGTH_SHORT).show();
-                        flag = true;
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -172,7 +170,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         Volley.newRequestQueue(MovieDetailsActivity.this).add(stringRequest);
-        Log.d("movie ", "queued success");
+        Log.d("movie", "queued success");
 
     }
     public void castDetails(){
@@ -191,11 +189,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                                 CastRecycler castRecycler = new CastRecycler(cImg, cName, cRole);
                                 arrCast.add(castRecycler);
                             }
-                            Log.d("volley","arrCastData"+ arrCast);
+                            Log.d("movie","arrCastData"+ arrCast);
 
                             CastRecyclerAdapter fadapter = new CastRecyclerAdapter(MovieDetailsActivity.this , arrCast);
                             castRecycler.setAdapter(fadapter);
-                            Log.d("volley ", "Cast set adapter ");
+                            Log.d("movie", "Cast set adapter ");
 
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -206,7 +204,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(MovieDetailsActivity.this, "" + error.getMessage(), Toast.LENGTH_LONG).show();
-                        Log.e("volley", "Cast LogE " + error.getMessage());
+                        Log.e("movie", "Cast LogE " + error.getMessage());
 
                     }
 
@@ -226,7 +224,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         Volley.newRequestQueue(this).add(stringRequest);
-        Log.d("volley ", "Cast queued success: ");
+        Log.d("movie", "Cast queued success: ");
     }
 
 

@@ -48,15 +48,14 @@ public class FirstRecyclerAdapter extends RecyclerView.Adapter<FirstRecyclerAdap
                 .placeholder(R.drawable.no_image)
                 .into(holder.movieimg);
 
-        Log.d("volleyholder ", "glide img ssuccess: ");
+        Log.d("volleyholder ", "glide img ssuccess:");
         }else{
             holder.movieimg.setBackgroundResource(R.drawable.no_image);
         }
         holder.moviename.setText(arrFirst.get(position).mName);
-        Log.d("volleyholder ", "movie name ssuccess: ");
+        Log.d("volleyholder ", "movie name ssuccess:");
         holder.moviegenre.setText(arrFirst.get(position).mGenre);
-        Log.d("volleyholder ", "genre ssuccess: ");
-
+        Log.d("volleyholder ", "genre ssuccess:");
 
  			holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
