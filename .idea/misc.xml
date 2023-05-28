@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -20,7 +19,6 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable-v24/warning_img.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/arrow_back.xml" value="0.106" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1015" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/next_button_for_selecte_seat_page.xml" value="0.105" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/user_details.xml" value="0.1015" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/user_details_background.xml" value="0.15" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/drawable/user_details_page_options_background.xml" value="0.1" />
@@ -32,10 +30,8 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_login.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_main.xml" value="0.15104166666666666" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_movie_details.xml" value="0.22" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_payment.xml" value="0.22" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_print_ticket.xml" value="0.15104166666666666" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_selecte_seat.xml" value="0.18" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_signup.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_user_account_details.xml" value="0.2" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/activity_user_dashboard.xml" value="0.15104166666666666" />
@@ -44,7 +40,7 @@
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_account.xml" value="0.16" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.14" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_home.xml" value="0.16" />
-        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_search.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/fragment_view_all.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/item_template_for_userdashborad.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/vineet mendon/Downloads/home/home/app/src/main/res/layout/location_selector.xml" value="0.15104166666666666" />
@@ -53,7 +49,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
