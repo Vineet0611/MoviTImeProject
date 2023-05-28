@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark"
-    tools:context=".MainActivity2">
+    tools:context=".activity_payment"
+    android:background="@color/bg_dark">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
