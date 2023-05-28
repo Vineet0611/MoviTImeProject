@@ -37,7 +37,7 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapte
 
         View view = LayoutInflater.from(context).inflate(R.layout.cast_crew_card, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
-        Log.d("volleyholder ", "viewholder success: ");
+        Log.d("movie", "viewholder success: ");
         return viewHolder;
     }
 
@@ -49,24 +49,24 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapte
                     .placeholder(R.drawable.no_user_img)
                     .into(holder.castimg);
 
-            Log.d("volleyholder ", "Cast glide img success: ");
+            Log.d("movie", "Cast glide img success: ");
         }else{
             holder.castimg.setBackgroundResource(R.drawable.no_user_img);
         }
         holder.castname.setText(arrCast.get(position).cName);
-        Log.d("volleyholder ", "Cast name success: "+arrCast.get(position).cName);
+        Log.d("movie", "Cast name success: ");
         holder.castrole.setText(arrCast.get(position).cRole);
-        Log.d("volleyholder ", "Cast role success: "+arrCast.get(position).cRole);
+        Log.d("movie", "Cast role success: ");
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, MovieDetailsActivity.class);
-                intent.putExtra("movie_name", arrCast.get(holder.getLayoutPosition()).cName);
-                context.startActivity(intent);
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(context, MovieDetailsActivity.class);
+//                intent.putExtra("movie_name", arrCast.get(holder.getLayoutPosition()).cName);
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -74,7 +74,7 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapte
         return arrCast.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView castimg;
         TextView castname, castrole;
         public ViewHolder(@NonNull View itemView) {
