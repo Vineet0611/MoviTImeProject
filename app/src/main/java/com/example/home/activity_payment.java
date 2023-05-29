@@ -24,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -88,7 +89,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         paymentTxt.setText(myAmount);
         SharedPreferences getmovieData = this.getSharedPreferences("moviedetails", Context.MODE_PRIVATE);
         String MovieName=getmovieData.getString("moviename","Data Not Found");
-        String MovieImage=getmovieData.getString("movieimg","Data Not Found");
+        String MovieImage=getmovieData.getString("movieVerticalImage","Data Not Found");
         movie_name.setText(MovieName);
         String theaterName= getSharedData.getString("TheaterName", "Data Not Found");
         movie_location.setText(theaterName);
@@ -96,7 +97,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         String ShowTime= getSharedData.getString("ShowTime", "Data Not Found");
         movie_dateTime.setText(myDate+" "+ShowTime);
         getShowId = getSharedData.getString("ShowId", "Data Not Found");
-
+        Picasso.get().load(MovieImage).into(movieImage);
         //------------------------------------------------------
         timer = new CountDownTimer(600000,1000) {
             @Override
