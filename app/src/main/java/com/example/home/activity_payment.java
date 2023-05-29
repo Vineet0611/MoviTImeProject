@@ -14,9 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
@@ -33,10 +30,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
@@ -50,7 +45,6 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
     String getUsername, getEmail, getPhone, getUserId;
     int total;
     ArrayList<String> seatList;
-    String seatTypes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,21 +85,13 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
         paymentTxt.setText(myAmount);
         SharedPreferences getmovieData = this.getSharedPreferences("moviedetails", Context.MODE_PRIVATE);
         String MovieName=getmovieData.getString("moviename","Data Not Found");
-        String MovieImage=getmovieData.getString("movieVerticalImage","Data Not Found");
+        String MovieImage=getmovieData.getString("movieimg","Data Not Found");
         movie_name.setText(MovieName);
         String theaterName= getSharedData.getString("TheaterName", "Data Not Found");
         movie_location.setText(theaterName);
         String myDate= getSharedData.getString("date", "Data Not Found");
         String ShowTime= getSharedData.getString("ShowTime", "Data Not Found");
         movie_dateTime.setText(myDate+" "+ShowTime);
-        if(!Objects.equals(MovieImage, "Image path not found")) {
-            Glide.with(getApplicationContext())
-                    .load(MovieImage)
-                    .placeholder(R.drawable.no_image)
-                    .into(movieImage);
-        }else {
-            Picasso.get().load(MovieImage).into(movieImage);
-        }
 
         //------------------------------------------------------
         timer = new CountDownTimer(600000,1000) {
