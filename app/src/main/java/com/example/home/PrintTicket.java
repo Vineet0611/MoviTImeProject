@@ -114,6 +114,9 @@ private void GeneratePdfFromView(View view){
       document.writeTo(fos);
       fos.close();
       Toast.makeText(this, "PDF saved to local storage"+file.getPath(), Toast.LENGTH_SHORT).show();
+      Intent intent=new Intent(PrintTicket.this,HomeActivity.class);
+      startActivity(intent);
+      finish();
   }catch (Exception ex){
       Toast.makeText(this, ""+ex, Toast.LENGTH_SHORT).show();
   }
