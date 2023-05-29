@@ -107,8 +107,18 @@ private void GeneratePdfFromView(View view){
     canvas.drawBitmap(bitmap,0,0,null);
     document.finishPage(myPage);
    // createFile();
+
+    String mPath;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD_MR1) {
+        mPath= this.getExternalFilesDir(Environment.DIRECTORY_DCIM) + "/" + "MovietimeTicket.pdf";
+    }
+    else
+    {
+        mPath= Environment.getExternalStorageDirectory().toString() + "/" + "MovietimeTicket.pdf";
+    }
     long milliseconds = System.currentTimeMillis();
   File file =new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),milliseconds+"MovietimeTicket.pdf");
+  //File file =new File(mPath);
   try{
       FileOutputStream fos=new FileOutputStream(file);
       document.writeTo(fos);
