@@ -14,6 +14,7 @@
         android:layout_height="0dp"
         android:background="@color/black"
         android:elevation="@dimen/_100sdp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -380,7 +381,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_7sdp"
-
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:orientation="vertical">
 
@@ -397,9 +397,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp">
+                        android:layout_marginBottom="@dimen/_5sdp"/>
 
-                    </androidx.recyclerview.widget.RecyclerView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Crew"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/crewRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
 
                 </LinearLayout>
             </LinearLayout> <!--Require child of scroll view -->

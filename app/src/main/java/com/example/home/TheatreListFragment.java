@@ -130,7 +130,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
                         @Override
                         public void onResponse(String response) {
                             try {
-                                if (response == "no"){
+                                if (Objects.equals(response, "no")){
                                     Toast.makeText(getApplicationContext(),"No record found", Toast.LENGTH_SHORT).show();
                                 }else{
                                     JSONArray tList = new JSONArray(response);
