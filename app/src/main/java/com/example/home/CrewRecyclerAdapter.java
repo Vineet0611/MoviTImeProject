@@ -22,13 +22,13 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapter.ViewHolder> {
+public class CrewRecyclerAdapter extends RecyclerView.Adapter<CrewRecyclerAdapter.ViewHolder> {
     Context context;
-    ArrayList<CastRecycler> arrCast;
+    ArrayList<CrewRecycler> arrCrew;
 
-    CastRecyclerAdapter(Context context, ArrayList<CastRecycler> arrCast){
+    CrewRecyclerAdapter(Context context, ArrayList<CrewRecycler> arrCrew){
         this.context= context;
-        this.arrCast = arrCast;
+        this.arrCrew = arrCrew;
     }
 
     @NonNull
@@ -37,42 +37,42 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastRecyclerAdapte
 
         View view = LayoutInflater.from(context).inflate(R.layout.cast_crew_card, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
-        Log.d("movie", "viewholder success: ");
+        Log.d("movie", "Crew viewholder success: ");
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        if(!Objects.equals(arrCast.get(position).cImg, "Image not available")) {
+        if(!Objects.equals(arrCrew.get(position).cImg, "Image not available")) {
             Glide.with(context)
-                    .load(arrCast.get(position).cImg)
+                    .load(arrCrew.get(position).cImg)
                     .placeholder(R.drawable.no_user_img)
-                    .into(holder.castimg);
+                    .into(holder.crewimg);
 
-            Log.d("movie", "Cast glide img success: ");
+            Log.d("movie", "Crew glide img success: ");
         }else{
-            holder.castimg.setBackgroundResource(R.drawable.no_user_img);
+            holder.crewimg.setBackgroundResource(R.drawable.no_user_img);
         }
-        holder.castname.setText(arrCast.get(position).cName);
+        holder.crewname.setText(arrCrew.get(position).cName);
         Log.d("movie", "Cast name success: ");
-        holder.castrole.setText(arrCast.get(position).cRole);
+        holder.crewrole.setText(arrCrew.get(position).cRole);
         Log.d("movie", "Cast role success: ");
     }
 
     @Override
     public int getItemCount() {
-        return arrCast.size();
+        return arrCrew.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView castimg;
-        TextView castname, castrole;
+        ImageView crewimg;
+        TextView crewname, crewrole;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            castimg = itemView.findViewById(R.id.charImg);
-            castname = itemView.findViewById(R.id.charName);
-            castrole = itemView.findViewById(R.id.charRole);
+            crewimg = itemView.findViewById(R.id.charImg);
+            crewname = itemView.findViewById(R.id.charName);
+            crewrole = itemView.findViewById(R.id.charRole);
         }
     }
 }
