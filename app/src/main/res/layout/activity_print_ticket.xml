@@ -71,6 +71,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/MovieName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -107,6 +108,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/TheaterName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -143,6 +145,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/ShowDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -179,6 +182,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/ShowTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -190,6 +194,7 @@
 
             </LinearLayout>
             <ImageView
+                android:id="@+id/MovieImageblock"
                 android:layout_width="200dp"
                 android:layout_height="300dp"
                 android:layout_gravity="center"
@@ -227,6 +232,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/SeatNumbersText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -263,6 +269,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/AmountText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"

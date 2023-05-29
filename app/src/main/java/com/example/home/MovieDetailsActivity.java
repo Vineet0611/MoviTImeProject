@@ -59,7 +59,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     ImageButton backButton;
     RecyclerView castRecycler;
-    String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
+    String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration,movieVerticalImage;
     private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
     private static final String castUrl = "https://inundated-lenders.000webhostapp.com/api/cast.php";
 //    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
@@ -145,6 +145,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             movie_languages = list.getJSONObject(0).getString("movie_languages");
                             movie_quality = list.getJSONObject(0).getString("movie_quality");
                             movie_img = list.getJSONObject(0).getString("movie_image");
+                            movieVerticalImage = list.getJSONObject(0).getString("movieVerticalImage");
+
 
                             SharedPreferences prefMovieId = getSharedPreferences("movieId", MODE_PRIVATE);
                             SharedPreferences.Editor prefEditor = prefMovieId.edit();
@@ -155,6 +157,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             SharedPreferences.Editor peditor = prefMdetails.edit();
                             peditor.putString("moviename", movie_name);
                             peditor.putString("movieimg", movie_img);
+                            peditor.putString("movieVerticalImage", movieVerticalImage);
                             peditor.putString("movieduration", movie_duration);
                             peditor.apply();
 

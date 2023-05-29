@@ -99,6 +99,8 @@ public class SelecteSeat extends AppCompatActivity{
                 editor.putString("TheaterName", TheaterName);
                 editor.putString("ShowTime", ShowTime);
                 editor.putString("date", date);
+                editor.putString("ShowId", ShowId);
+                editor.putString("SeatNos", SeatNos);
                 editor.apply();
                 startActivity(it);
             }
