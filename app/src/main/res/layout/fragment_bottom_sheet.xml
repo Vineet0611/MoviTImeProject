@@ -12,23 +12,6 @@
         android:background="@drawable/background_grey"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_20sdp"/>
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="location"-->
-<!--        android:textAllCaps="true"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="@dimen/_16ssp"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textStyle="bold"-->
-<!--        android:padding="@dimen/_10sdp"-->
-<!--        android:layout_marginBottom="@dimen/_5sdp"-->
-<!--        />-->
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/_1sdp"-->
-<!--        android:background="#8B8A8A"-->
-<!--        android:layout_marginBottom="@dimen/_10sdp"/>-->
 
     <GridLayout
         android:layout_width="match_parent"
@@ -38,6 +21,7 @@
         <!--  android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_5sdp"-->
         <LinearLayout
+            android:id="@+id/back_ahamdabad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -66,7 +50,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_banglore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -95,7 +79,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_chandigarh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -124,7 +108,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_chennai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -153,7 +137,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_delhi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -182,7 +166,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_hyderabad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -211,7 +195,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_kolkata"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -240,7 +224,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_mumbai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
@@ -269,7 +253,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/back_pune"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"

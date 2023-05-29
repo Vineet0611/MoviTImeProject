@@ -32,6 +32,7 @@ import java.util.Objects;
 public class BottomSheetFragment extends BottomSheetDialogFragment {
 
     ImageButton ahemdabad, banglore, chandigarh, chennai, delhi, hyderabad, kolkata, mumbai,pune;
+    LinearLayout back_ahemdabad, back_banglore,  back_chandigarh,  back_chennai,  back_delhi,  back_hyderabad,  back_kolkata,  back_mumbai, back_pune;
     TextView location;
 
     @Override
@@ -52,161 +53,154 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         pune = (ImageButton) view.findViewById(R.id.pune);
         kolkata = (ImageButton) view.findViewById(R.id.kolkata);
 
+        back_ahemdabad= (LinearLayout)view.findViewById(R.id.back_ahamdabad);
+        back_banglore= (LinearLayout)view.findViewById(R.id.back_banglore);
+        back_chennai= (LinearLayout)view.findViewById(R.id.back_chennai);
+        back_chandigarh= (LinearLayout)view.findViewById(R.id.back_chandigarh);
+        back_delhi= (LinearLayout)view.findViewById(R.id.back_delhi);
+        back_hyderabad = (LinearLayout)view.findViewById(R.id.back_hyderabad);
+        back_mumbai= (LinearLayout)view.findViewById(R.id.back_mumbai);
+        back_pune= (LinearLayout)view.findViewById(R.id.back_pune);
+        back_kolkata= (LinearLayout)view.findViewById(R.id.back_kolkata);
+
 
         ahemdabad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Ahemdabad");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Ahemdabad");
-//                selectedButton("ahemdabad");
+               setText("Ahemdabad");
+               selectedButton("ahemdabad");
             }
         });
         banglore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Banglore");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Banglore");
-//                selectedButton("banglore");
+                setText("Banglore");
+                selectedButton("banglore");
             }
         });
         chandigarh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Chandigarh");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Chandigarh");
-//                selectedButton("chandigarh");
+               setText("Chandigarh");
+               selectedButton("chandigarh");
             }
         });
         chennai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Chennai");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Chennai");
-//                selectedButton("chennai");
+                setText("Chennai");
+                selectedButton("chennai");
             }
         });
         delhi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Delhi");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Delhi");
-//                selectedButton("delhi");
+               setText("Delhi");
+               selectedButton("delhi");
             }
         });
         hyderabad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Hyderabad");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Hyderabad");
-//                selectedButton("hyderabad");
+                setText("Hyderabad");
+                selectedButton("hyderabad");
             }
         });
         kolkata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Kolkata");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Kolkata");
-//                selectedButton("kolkata");
+                setText("Kolkata");
+                selectedButton("kolkata");
             }
         });
         mumbai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Mumbai");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Mumbai");
-//                selectedButton("mumbai");
+                setText("Mumbai");
+                selectedButton("mumbai");
             }
         });
         pune.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
-                SharedPreferences.Editor prefEditor = prefLocation.edit();
-                prefEditor.putString("city","Pune");
-                prefEditor.apply();
-                dismiss();
-                location.setText("Pune");
-//                selectedButton("pune");
+               setText("Pune");
+               selectedButton("pune");
             }
         });
         return view;
     }
 
-//    public void selectedButton(String button) {
-//
-//        ahemdabad.setBackgroundColor(R.drawable.background_white);
-//        banglore.setBackgroundColor(R.drawable.background_white);
-//        chandigarh.setBackgroundColor(R.drawable.background_white);
-//        chennai.setBackgroundColor(R.drawable.background_white);
-//        delhi.setBackgroundColor(R.drawable.background_white);
-//        hyderabad.setBackgroundColor(R.drawable.background_white);
-//        mumbai.setBackgroundColor(R.drawable.background_white);
-//        kolkata.setBackgroundColor(R.drawable.background_white);
-//        pune.setBackgroundColor(R.drawable.background_white);
-//
-//
-//
-//        if (button.equals("ahemdabad")) {
-//            ahemdabad.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("banglore")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("chandigarh")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("chennai")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("delhi")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("hyderabad")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("mumbai")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("pune")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//        else if (button.equals("kolkata")) {
-//            banglore.setBackgroundColor(R.drawable.background_colored);
-//        }
-//
-//    }
+    private void setText(String loc){
+        SharedPreferences prefLocation = getActivity().getSharedPreferences("location", MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = prefLocation.edit();
+        prefEditor.putString("city",loc);
+        prefEditor.apply();
+        dismiss();
+        location.setText(loc);
+    }
+
+
+    public void selectedButton(String button) {
+
+        ahemdabad.setBackgroundColor(R.drawable.background_white);
+        back_ahemdabad.setBackgroundColor(R.drawable.background_white);
+        banglore.setBackgroundColor(R.drawable.background_white);
+        back_banglore.setBackgroundColor(R.drawable.background_white);
+        chandigarh.setBackgroundColor(R.drawable.background_white);
+        back_chandigarh.setBackgroundColor(R.drawable.background_white);
+        chennai.setBackgroundColor(R.drawable.background_white);
+        back_chennai.setBackgroundColor(R.drawable.background_white);
+        delhi.setBackgroundColor(R.drawable.background_white);
+        back_delhi.setBackgroundColor(R.drawable.background_white);
+        hyderabad.setBackgroundColor(R.drawable.background_white);
+        back_hyderabad.setBackgroundColor(R.drawable.background_white);
+        mumbai.setBackgroundColor(R.drawable.background_white);
+        back_mumbai.setBackgroundColor(R.drawable.background_white);
+        kolkata.setBackgroundColor(R.drawable.background_white);
+        back_kolkata.setBackgroundColor(R.drawable.background_white);
+        pune.setBackgroundColor(R.drawable.background_white);
+        back_pune.setBackgroundColor(R.drawable.background_white);
+
+
+
+        if (button.equals("ahemdabad")) {
+            ahemdabad.setBackgroundColor(R.drawable.background_colored);
+            back_ahemdabad.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("banglore")) {
+            banglore.setBackgroundColor(R.drawable.background_colored);
+            back_banglore.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("chandigarh")) {
+            chandigarh.setBackgroundColor(R.drawable.background_colored);
+            back_chandigarh.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("chennai")) {
+            chennai.setBackgroundColor(R.drawable.background_colored);
+            back_chennai.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("delhi")) {
+            delhi.setBackgroundColor(R.drawable.background_colored);
+            back_delhi.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("hyderabad")) {
+            hyderabad.setBackgroundColor(R.drawable.background_colored);
+            back_hyderabad.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("mumbai")) {
+            mumbai.setBackgroundColor(R.drawable.background_colored);
+            back_mumbai.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("pune")) {
+            pune.setBackgroundColor(R.drawable.background_colored);
+            back_pune.setBackgroundColor(R.drawable.background_colored);
+        }
+        else if (button.equals("kolkata")) {
+            kolkata.setBackgroundColor(R.drawable.background_colored);
+            back_kolkata.setBackgroundColor(R.drawable.background_colored);
+        }
+
+    }
 
 
 
