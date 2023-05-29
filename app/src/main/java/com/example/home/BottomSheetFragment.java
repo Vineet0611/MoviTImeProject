@@ -3,11 +3,15 @@ package com.example.home;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,11 +34,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     ImageButton ahemdabad, banglore, chandigarh, chennai, delhi, hyderabad, kolkata, mumbai,pune;
     TextView location;
 
-
-    public BottomSheetFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +52,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
         pune = (ImageButton) view.findViewById(R.id.pune);
         kolkata = (ImageButton) view.findViewById(R.id.kolkata);
 
+
         ahemdabad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +62,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Ahemdabad");
+//                selectedButton("ahemdabad");
             }
         });
         banglore.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +74,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Banglore");
+//                selectedButton("banglore");
             }
         });
         chandigarh.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +86,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Chandigarh");
+//                selectedButton("chandigarh");
             }
         });
         chennai.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +98,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Chennai");
+//                selectedButton("chennai");
             }
         });
         delhi.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +110,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Delhi");
+//                selectedButton("delhi");
             }
         });
         hyderabad.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +122,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Hyderabad");
+//                selectedButton("hyderabad");
             }
         });
         kolkata.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +134,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Kolkata");
+//                selectedButton("kolkata");
             }
         });
         mumbai.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +146,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Mumbai");
+//                selectedButton("mumbai");
             }
         });
         pune.setOnClickListener(new View.OnClickListener() {
@@ -150,21 +158,55 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 prefEditor.apply();
                 dismiss();
                 location.setText("Pune");
+//                selectedButton("pune");
             }
         });
-
-
         return view;
     }
 
-
-
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-    }
+//    public void selectedButton(String button) {
+//
+//        ahemdabad.setBackgroundColor(R.drawable.background_white);
+//        banglore.setBackgroundColor(R.drawable.background_white);
+//        chandigarh.setBackgroundColor(R.drawable.background_white);
+//        chennai.setBackgroundColor(R.drawable.background_white);
+//        delhi.setBackgroundColor(R.drawable.background_white);
+//        hyderabad.setBackgroundColor(R.drawable.background_white);
+//        mumbai.setBackgroundColor(R.drawable.background_white);
+//        kolkata.setBackgroundColor(R.drawable.background_white);
+//        pune.setBackgroundColor(R.drawable.background_white);
+//
+//
+//
+//        if (button.equals("ahemdabad")) {
+//            ahemdabad.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("banglore")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("chandigarh")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("chennai")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("delhi")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("hyderabad")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("mumbai")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("pune")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//        else if (button.equals("kolkata")) {
+//            banglore.setBackgroundColor(R.drawable.background_colored);
+//        }
+//
+//    }
 
 
 

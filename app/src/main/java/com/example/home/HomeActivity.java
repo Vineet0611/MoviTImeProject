@@ -110,9 +110,9 @@ public class HomeActivity extends AppCompatActivity {
 
         // Hide the current fragment
         if(flag){
-        if (currentFragmentIndex >= 0 && currentFragmentIndex < fragments.length) {
+            if (currentFragmentIndex >= 0 && currentFragmentIndex < fragments.length) {
             fragmentTransaction.hide(fragments[currentFragmentIndex]);
-        }
+            }
         }
 
         // Show the new fragment
