@@ -12,6 +12,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.Snackbar;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,11 +27,21 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.view.WindowCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.home.databinding.ActivityMovieDetailsBinding;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,13 +58,12 @@ public class MovieDetailsActivity extends AppCompatActivity {
     ImageView movietrailer, movieimg;
 
     ImageButton backButton;
-    RecyclerView castRecycler, crewRecycler;
-    String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration;
+    RecyclerView castRecycler;
+    String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration,movieVerticalImage;
     private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
     private static final String castUrl = "https://inundated-lenders.000webhostapp.com/api/cast.php";
-    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
+//    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
     ArrayList<CastRecycler> arrCast =new ArrayList<>();
-    ArrayList<CrewRecycler> arrCrew =new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +86,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         castRecycler=(RecyclerView)findViewById(R.id.castRecycler);
         castRecycler.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
-        crewRecycler=(RecyclerView)findViewById(R.id.crewRecycler);
-        crewRecycler.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
 
 
         if(getIntent().hasExtra("movie_name") ){
@@ -136,6 +145,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             movie_languages = list.getJSONObject(0).getString("movie_languages");
                             movie_quality = list.getJSONObject(0).getString("movie_quality");
                             movie_img = list.getJSONObject(0).getString("movie_image");
+                            movieVerticalImage = list.getJSONObject(0).getString("movieVerticalImage");
+
 
                             SharedPreferences prefMovieId = getSharedPreferences("movieId", MODE_PRIVATE);
                             SharedPreferences.Editor prefEditor = prefMovieId.edit();
@@ -146,11 +157,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             SharedPreferences.Editor peditor = prefMdetails.edit();
                             peditor.putString("moviename", movie_name);
                             peditor.putString("movieimg", movie_img);
+                            peditor.putString("movieVerticalImage", movieVerticalImage);
                             peditor.putString("movieduration", movie_duration);
                             peditor.apply();
 
                             castDetails();
-                            crewDetails();
 
                             moviegenre.setText(movie_genre);
                             movieabout.setText(movie_about);
@@ -198,7 +209,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
         Log.d("movie", "queued success");
 
     }
-
     public void castDetails(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, castUrl,
                 new Response.Listener<String>() {
@@ -251,60 +261,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(stringRequest);
         Log.d("movie", "Cast queued success: ");
-    }
-
-    public void crewDetails(){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, crewUrl,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray crewList = new JSONArray(response);
-                            for(int i=0; i<crewList.length(); i++){
-                                JSONObject crewObjects = crewList.getJSONObject(i);
-                                String cImg = crewObjects.getString("crew_img");
-                                String cName = crewObjects.getString("crew_name");
-                                String cRole = crewObjects.getString("crew_role");
-
-                                CrewRecycler crewRecycler = new CrewRecycler(cImg, cName, cRole);
-                                arrCrew.add(crewRecycler);
-                            }
-                            Log.d("movie","arrCrewData"+ arrCrew);
-
-                            CrewRecyclerAdapter fadapter = new CrewRecyclerAdapter(MovieDetailsActivity.this , arrCrew);
-                            crewRecycler.setAdapter(fadapter);
-                            Log.d("movie", "Crew set adapter ");
-
-                        } catch (JSONException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MovieDetailsActivity.this, "" + error.getMessage(), Toast.LENGTH_LONG).show();
-                        Log.e("movie", "Crew LogE " + error.getMessage());
-
-                    }
-
-                }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                params.put("movieid", movie_id);
-                return params;
-            }
-        };
-
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                50000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-        Volley.newRequestQueue(this).add(stringRequest);
-        Log.d("movie", "Crew queued success: ");
     }
 
 

@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,8 @@ import io.github.muddz.styleabletoast.StyleableToast;
 public class activity_signup extends AppCompatActivity {
 
     TextView login_txt;
+    ProgressBar progressBar;
+    RelativeLayout rl;
     EditText username, email, password, phone;
     Button signupBtn, fb_login, google_login;
     ImageView password_img;
@@ -53,6 +57,9 @@ public class activity_signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         Intent intent = new Intent(activity_signup.this, activity_verification.class);
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        rl = (RelativeLayout) findViewById(R.id.progress_bar_layout);
 
         login_txt = findViewById(R.id.login);
 
@@ -141,6 +148,9 @@ public class activity_signup extends AppCompatActivity {
     }
     private void insertData() {
 
+        progressBar.setVisibility(View.VISIBLE);
+        rl.setVisibility(View.VISIBLE);
+
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://inundated-lenders.000webhostapp.com/Android/select.php";
 
@@ -206,8 +216,8 @@ public class activity_signup extends AppCompatActivity {
                 new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                     @Override
                     public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-//                                    progressBar.setVisibility(View.GONE);
-//                                    sendotp.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.GONE);
+                        rl.setVisibility(View.GONE);
                     }
 
                     @Override

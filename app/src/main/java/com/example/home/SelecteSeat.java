@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,6 +48,10 @@ public class SelecteSeat extends AppCompatActivity{
     int noOfSeatsSelected=0;
     String SeatNos="";
     String TotalAmount="0";
+    String TheaterName="";
+    String ShowTime="";
+    String date="";
+    String ShowId="";
     List<String> AllSeatIdsGlobal=new ArrayList<String>(Arrays.asList(
             "A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12"
             ,"B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12",
@@ -66,16 +72,36 @@ public class SelecteSeat extends AppCompatActivity{
         binding=ActivitySelecteSeatBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-
+        Intent intent = getIntent();
+        TheaterName = intent.getStringExtra("theatre_name");
+        ShowTime = intent.getStringExtra("show_time");
+        date = intent.getStringExtra("date");
+        ShowId= intent.getStringExtra("show_id");
+        SharedPreferences getmovieData = this.getSharedPreferences("moviedetails", Context.MODE_PRIVATE);
+        String MovieName=getmovieData.getString("moviename","Data Not Found");
+        binding.MovieNameText.setText(MovieName);
+        binding.TheaterNameText.setText(TheaterName);
+        binding.ShowTimeText.setText(ShowTime);
         showCustomDialog();
         txt=binding.NoOfTicketsText;
         String noOfTickets=Integer.toString(NoOfTickets);
         binding.NoOfTicketsText.setText(noOfTickets);
-        GetSeatNoRequest();
+        GetSeatNoRequest(ShowId);
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it =new Intent(getApplicationContext(),PrintTicket.class);
+                Intent it =new Intent(getApplicationContext(),activity_payment.class);
+                it.putExtra("SeatNumbers",SeatNos);
+                SharedPreferences sharedPreferences = getSharedPreferences("SeatInfo", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("noOfTickets", Integer.toString(NoOfTickets));
+                editor.putString("Amount", TotalAmount);
+                editor.putString("TheaterName", TheaterName);
+                editor.putString("ShowTime", ShowTime);
+                editor.putString("date", date);
+                editor.putString("ShowId", ShowId);
+                editor.putString("SeatNos", SeatNos);
+                editor.apply();
                 startActivity(it);
             }
         });
@@ -243,6 +269,7 @@ public class SelecteSeat extends AppCompatActivity{
         builder.setView(dialogView);
 
 
+
         Button button1 = dialogView.findViewById(R.id.button1);
         Button button2 = dialogView.findViewById(R.id.button2);
         Button button3 = dialogView.findViewById(R.id.button3);
@@ -254,7 +281,6 @@ public class SelecteSeat extends AppCompatActivity{
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SelecteSeat.this, "Button 1 clicked", Toast.LENGTH_SHORT).show();
                 NoOfTickets=1;
                 txt.setText("1");
                 dialog.dismiss();
@@ -264,7 +290,6 @@ public class SelecteSeat extends AppCompatActivity{
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SelecteSeat.this, "Button 2 clicked", Toast.LENGTH_SHORT).show();
                 NoOfTickets=2;
                 txt.setText("2");
                 dialog.dismiss();
@@ -274,7 +299,6 @@ public class SelecteSeat extends AppCompatActivity{
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SelecteSeat.this, "Button 3 clicked", Toast.LENGTH_SHORT).show();
                 NoOfTickets=3;
                 txt.setText("3");
                 dialog.dismiss();
@@ -284,7 +308,6 @@ public class SelecteSeat extends AppCompatActivity{
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SelecteSeat.this, "Button 4 clicked", Toast.LENGTH_SHORT).show();
                 NoOfTickets=4;
                 txt.setText("4");
                 dialog.dismiss();
@@ -293,7 +316,6 @@ public class SelecteSeat extends AppCompatActivity{
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SelecteSeat.this, "Button 5 clicked", Toast.LENGTH_SHORT).show();
                 NoOfTickets=5;
                 txt.setText("5");
                 dialog.dismiss();
@@ -386,11 +408,11 @@ public class SelecteSeat extends AppCompatActivity{
             Toast.makeText(this, "Error : "+ex+" "+i, Toast.LENGTH_LONG).show();
         }
     }
-    public void GetSeatNoRequest(){
+    public void GetSeatNoRequest(String ShowId){
 
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="https://inundated-lenders.000webhostapp.com/Admin/php/GetBookedSeatsApiForAndroid.php?id=1";
+        String url ="https://inundated-lenders.000webhostapp.com/Admin/php/GetBookedSeatsApiForAndroid.php?id="+ShowId;
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

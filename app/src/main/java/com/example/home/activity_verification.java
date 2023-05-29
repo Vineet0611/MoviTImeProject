@@ -8,6 +8,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +42,8 @@ import io.github.muddz.styleabletoast.StyleableToast;
 
 public class activity_verification extends AppCompatActivity {
 
+    ProgressBar progressBar;
+    RelativeLayout rl;
     EditText et1, et2, et3, et4, et5, et6;
     Button submit_btn;
     TextView phone_no, resend_otp;
@@ -49,6 +53,9 @@ public class activity_verification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        rl = (RelativeLayout) findViewById(R.id.progress_bar_layout);
 
         et1 = findViewById(R.id.inputotp1);
         et2 = findViewById(R.id.inputotp2);
@@ -70,6 +77,8 @@ public class activity_verification extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validation()) {
+                    progressBar.setVisibility(View.VISIBLE);
+                    rl.setVisibility(View.VISIBLE);
                     setOtp();
                     checkOtp();
                 }
@@ -79,7 +88,7 @@ public class activity_verification extends AppCompatActivity {
         resend_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resendOtp();
+                //resendOtp();
             }
         });
     }
@@ -121,6 +130,8 @@ public class activity_verification extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 saveData();
                             } else {
+                                progressBar.setVisibility(View.GONE);
+                                rl.setVisibility(View.GONE);
                                 Toast.makeText(activity_verification.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -146,6 +157,8 @@ public class activity_verification extends AppCompatActivity {
         } else if (google_status.equals("true")) {
             insertData("Google", getUsername, getEmail, getPhone, getId);
         } else {
+            progressBar.setVisibility(View.GONE);
+            rl.setVisibility(View.GONE);
             Intent intent = new Intent(getApplicationContext(), activity_login.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             StyleableToast.makeText(getApplicationContext(), "Register Successfully", Toast.LENGTH_LONG, R.style.success_toast).show();

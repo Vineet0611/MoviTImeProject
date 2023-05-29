@@ -16,6 +16,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -32,6 +33,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.home.databinding.ActivityPrintTicketBinding;
+import com.squareup.picasso.Picasso;
 //import com.tejpratapsingh.pdfcreator.utils.PDFUtil;
 
 import java.io.File;
@@ -45,6 +47,7 @@ private ActivityPrintTicketBinding binding;
 int PERMISSION_REQUEST_CODE=1;
 int pdfHeight=1080;
 int pdfWidth=720;
+String movieName,VerticalImage;
 private PdfDocument document;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,25 @@ private PdfDocument document;
                     }
             }
         });
+        SharedPreferences getSharedData = this.getSharedPreferences("SeatInfo", Context.MODE_PRIVATE);
+        SharedPreferences getmovieData = this.getSharedPreferences("moviedetails", Context.MODE_PRIVATE);
+
+        movieName=getmovieData.getString("moviename","Data Not Found");
+        VerticalImage=getmovieData.getString("movieVerticalImage","Data Not Found");
+        String theaterName= getSharedData.getString("TheaterName", "Data Not Found");
+        String myDate= getSharedData.getString("date", "Data Not Found");
+        String ShowTime= getSharedData.getString("ShowTime", "Data Not Found");
+        String myAmount= getSharedData.getString("Amount", "Data Not Found");
+        String SeatNumberString= getSharedData.getString("SeatNos", "Data Not Found");
+        myAmount=myAmount.replace("₹","");
+        Picasso.get().load(VerticalImage).into(binding.MovieImageblock);
+        binding.AmountText.setText(myAmount);
+        binding.TheaterName.setText(theaterName);
+        binding.MovieName.setText(movieName);
+        binding.ShowDate.setText(myDate);
+        binding.ShowTime.setText(ShowTime);
+        binding.SeatNumbersText.setText(SeatNumberString);
+
     }
 
     @RequiresApi(api= Build.VERSION_CODES.M)
@@ -92,6 +114,9 @@ private void GeneratePdfFromView(View view){
       document.writeTo(fos);
       fos.close();
       Toast.makeText(this, "PDF saved to local storage"+file.getPath(), Toast.LENGTH_SHORT).show();
+      Intent intent=new Intent(PrintTicket.this,HomeActivity.class);
+      startActivity(intent);
+      finish();
   }catch (Exception ex){
       Toast.makeText(this, ""+ex, Toast.LENGTH_SHORT).show();
   }
