@@ -412,7 +412,7 @@ public class SelecteSeat extends AppCompatActivity{
 
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url ="https://inundated-lenders.000webhostapp.com/Admin/php/GetBookedSeatsApiForAndroid.php?id="+ShowId;
+        String url ="https://movietimess.000webhostapp.com/Admin/php/GetBookedSeatsApiForAndroid.php?id="+ShowId;
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

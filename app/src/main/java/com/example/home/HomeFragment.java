@@ -45,10 +45,10 @@ public class HomeFragment extends Fragment {
 
     ProgressBar progressBar;
     RelativeLayout rl;
-    private static final String url1 = "https://inundated-lenders.000webhostapp.com/api/recycler1.php";
-    private static final String url2 = "https://inundated-lenders.000webhostapp.com/api/recycler2.php";
-    private static final String url3 = "https://inundated-lenders.000webhostapp.com/api/recycler3.php";
-    private static final String url4 = "https://inundated-lenders.000webhostapp.com/api/recycler4.php";
+    private static final String url1 = "https://movietimess.000webhostapp.com/api/recycler1.php";
+    private static final String url2 = "https://movietimess.000webhostapp.com/api/recycler2.php";
+    private static final String url3 = "https://movietimess.000webhostapp.com/api/recycler3.php";
+    private static final String url4 = "https://movietimess.000webhostapp.com/api/recycler4.php";
 
     ImageSlider imageSlider;
     RecyclerView recyclerView1, recyclerView2, recyclerView3, recyclerView4;

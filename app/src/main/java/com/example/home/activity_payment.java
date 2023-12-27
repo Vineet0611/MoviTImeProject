@@ -207,7 +207,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
     private void insertBookings(String userId, String showId, String seatNo, String seatType) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://inundated-lenders.000webhostapp.com/Android/payment.php";
+        String url = "https://movietimess.000webhostapp.com/Android/payment.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -257,7 +257,7 @@ public class activity_payment extends AppCompatActivity implements PaymentResult
     private void insertPayment(int totalAmt) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://inundated-lenders.000webhostapp.com/Android/payment.php";
+        String url = "https://movietimess.000webhostapp.com/Android/payment.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

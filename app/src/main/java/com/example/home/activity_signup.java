@@ -152,7 +152,7 @@ public class activity_signup extends AppCompatActivity {
         rl.setVisibility(View.VISIBLE);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://inundated-lenders.000webhostapp.com/Android/select.php";
+        String url = "https://movietimess.000webhostapp.com/Android/select.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

@@ -180,7 +180,7 @@ public class activity_login extends AppCompatActivity {
     private void checkLoginCredentials() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://inundated-lenders.000webhostapp.com/Android/select.php";
+        String url = "https://movietimess.000webhostapp.com/Android/select.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -313,7 +313,7 @@ public class activity_login extends AppCompatActivity {
     private void checkGoogleLogin() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://inundated-lenders.000webhostapp.com/Android/select.php";
+        String url = "https://movietimess.000webhostapp.com/Android/select.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

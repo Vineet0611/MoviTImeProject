@@ -169,7 +169,7 @@ public class activity_verification extends AppCompatActivity {
     private void insertData(String loginType, String getUsername, String getEmail, String getPhone, String getId) {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://inundated-lenders.000webhostapp.com/Android/select.php";
+        String url = "https://movietimess.000webhostapp.com/Android/select.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

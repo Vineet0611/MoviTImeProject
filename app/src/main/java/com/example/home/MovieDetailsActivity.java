@@ -60,9 +60,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
     ImageButton backButton;
     RecyclerView castRecycler;
     String movie_name, movie_genre, movie_img, movie_id, movie_about, movie_languages, movie_quality, movie_released, movie_trailer, movie_duration,movieVerticalImage;
-    private static final String url = "https://inundated-lenders.000webhostapp.com/api/moviedetails.php";
-    private static final String castUrl = "https://inundated-lenders.000webhostapp.com/api/cast.php";
-//    private static final String crewUrl = "https://inundated-lenders.000webhostapp.com/api/crew.php";
+    private static final String url = "https://movietimess.000webhostapp.com/api/moviedetails.php";
+    private static final String castUrl = "https://movietimess.000webhostapp.com/api/cast.php";
+//    private static final String crewUrl = "https://movietimess.000webhostapp.com/api/crew.php";
     ArrayList<CastRecycler> arrCast =new ArrayList<>();
 
     @Override

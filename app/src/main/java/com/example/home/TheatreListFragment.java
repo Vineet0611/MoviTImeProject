@@ -60,7 +60,7 @@ public class TheatreListFragment extends BottomSheetDialogFragment {
     ArrayList<CalendarRecycler> calendarList =new ArrayList<>();
     ArrayList<TheatreRecycler> theatreList = new ArrayList<>();
 
-    private static final String url = "https://inundated-lenders.000webhostapp.com/api/theatre.php";
+    private static final String url = "https://movietimess.000webhostapp.com/api/theatre.php";
     RecyclerView calendarRecycler, theatreRecycler;
     String mid, c, d;
 
